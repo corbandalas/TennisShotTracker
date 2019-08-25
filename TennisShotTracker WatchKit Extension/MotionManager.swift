@@ -63,6 +63,10 @@ class MotionManager {
     let accelerationYBuffer = RunningBuffer(size: ModelConstants.predictionWindowSize)
     let accelerationZBuffer = RunningBuffer(size: ModelConstants.predictionWindowSize)
     
+    let gravityXBuffer = RunningBuffer(size: ModelConstants.predictionWindowSize)
+    let gravityYBuffer = RunningBuffer(size: ModelConstants.predictionWindowSize)
+    let gravityZBuffer = RunningBuffer(size: ModelConstants.predictionWindowSize)
+    
     let model = MyActivityClassifier_1()
     
    
@@ -141,6 +145,10 @@ class MotionManager {
                    accelerationXBuffer.addSample(deviceMotion.userAcceleration.x)
                    accelerationYBuffer.addSample(deviceMotion.userAcceleration.y)
                    accelerationZBuffer.addSample(deviceMotion.userAcceleration.z)
+
+                   gravityXBuffer.addSample(deviceMotion.gravity.x)
+                   gravityYBuffer.addSample(deviceMotion.gravity.y)
+                   gravityZBuffer.addSample(deviceMotion.gravity.z)
             
             print(
                 String(deviceMotion.timestamp),           String(deviceMotion.userAcceleration.x),
@@ -149,6 +157,9 @@ class MotionManager {
                                  String(deviceMotion.rotationRate.x),
                                  String(deviceMotion.rotationRate.y),
                                  String(deviceMotion.rotationRate.z),
+                                 String(deviceMotion.gravity.x),
+                                 String(deviceMotion.gravity.y),
+                                 String(deviceMotion.gravity.z),
 
                           separator: ",")
             
@@ -172,6 +183,10 @@ class MotionManager {
                 accelerationXBuffer.reset()
                 accelerationYBuffer.reset()
                 accelerationZBuffer.reset()
+                
+                gravityXBuffer.reset()
+                gravityYBuffer.reset()
+                gravityZBuffer.reset()
                 
                 rateAlongGravityBuffer.reset()
                 
@@ -243,6 +258,10 @@ class MotionManager {
         accelerationXBuffer.reset()
         accelerationYBuffer.reset()
         accelerationZBuffer.reset()
+        
+        gravityXBuffer.reset()
+        gravityYBuffer.reset()
+        gravityZBuffer.reset()
     
         forehandCount = 0
         backhandCount = 0

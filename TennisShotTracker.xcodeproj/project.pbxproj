@@ -1,0 +1,582 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9E65DB46230ECD3100D55736 /* MyActivityClassifier 1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9E65DB45230ECD3100D55736 /* MyActivityClassifier 1.mlmodel */; };
+		9ECCBAAC230878BB0061805A /* TennisShotTracker WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 9ECCBAAB230878BB0061805A /* TennisShotTracker WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9ECCBAB2230878BB0061805A /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9ECCBAB0230878BB0061805A /* Interface.storyboard */; };
+		9ECCBAB4230878C00061805A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9ECCBAB3230878C00061805A /* Assets.xcassets */; };
+		9ECCBABB230878C00061805A /* TennisShotTracker WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9ECCBABA230878C00061805A /* TennisShotTracker WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9ECCBAC0230878C00061805A /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECCBABF230878C00061805A /* InterfaceController.swift */; };
+		9ECCBAC2230878C00061805A /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECCBAC1230878C00061805A /* ExtensionDelegate.swift */; };
+		9ECCBAC4230878C00061805A /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECCBAC3230878C00061805A /* ComplicationController.swift */; };
+		9ECCBAC6230878C20061805A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9ECCBAC5230878C20061805A /* Assets.xcassets */; };
+		9ECCBAD62308790F0061805A /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECCBAD52308790F0061805A /* MotionManager.swift */; };
+		9ECCBAD8230879AC0061805A /* RunningBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECCBAD7230879AC0061805A /* RunningBuffer.swift */; };
+		9ECCBADA23087F2E0061805A /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECCBAD923087F2E0061805A /* WorkoutManager.swift */; };
+		9ECCBAE22309D0380061805A /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ECCBAE12309D0380061805A /* HealthKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9ECCBAAD230878BB0061805A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9ECCBAA1230878BB0061805A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9ECCBAAA230878BB0061805A;
+			remoteInfo = "TennisShotTracker WatchKit App";
+		};
+		9ECCBABC230878C00061805A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9ECCBAA1230878BB0061805A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9ECCBAB9230878C00061805A;
+			remoteInfo = "TennisShotTracker WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9ECCBACD230878C20061805A /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				9ECCBABB230878C00061805A /* TennisShotTracker WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9ECCBAD1230878C20061805A /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				9ECCBAAC230878BB0061805A /* TennisShotTracker WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		9E65DB45230ECD3100D55736 /* MyActivityClassifier 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "MyActivityClassifier 1.mlmodel"; sourceTree = "<group>"; };
+		9ECCBAA7230878BB0061805A /* TennisShotTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TennisShotTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9ECCBAAB230878BB0061805A /* TennisShotTracker WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TennisShotTracker WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9ECCBAB1230878BB0061805A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		9ECCBAB3230878C00061805A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9ECCBAB5230878C00061805A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9ECCBABA230878C00061805A /* TennisShotTracker WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "TennisShotTracker WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9ECCBABF230878C00061805A /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		9ECCBAC1230878C00061805A /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		9ECCBAC3230878C00061805A /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		9ECCBAC5230878C20061805A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9ECCBAC7230878C20061805A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9ECCBAD52308790F0061805A /* MotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
+		9ECCBAD7230879AC0061805A /* RunningBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningBuffer.swift; sourceTree = "<group>"; };
+		9ECCBAD923087F2E0061805A /* WorkoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManager.swift; sourceTree = "<group>"; };
+		9ECCBADF2309D0380061805A /* TennisShotTracker WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TennisShotTracker WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		9ECCBAE12309D0380061805A /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS6.0.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9ECCBAB7230878C00061805A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9ECCBAE22309D0380061805A /* HealthKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9ECCBAA0230878BB0061805A = {
+			isa = PBXGroup;
+			children = (
+				9ECCBAAF230878BB0061805A /* TennisShotTracker WatchKit App */,
+				9ECCBABE230878C00061805A /* TennisShotTracker WatchKit Extension */,
+				9ECCBAA8230878BB0061805A /* Products */,
+				9ECCBAE02309D0380061805A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9ECCBAA8230878BB0061805A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9ECCBAA7230878BB0061805A /* TennisShotTracker.app */,
+				9ECCBAAB230878BB0061805A /* TennisShotTracker WatchKit App.app */,
+				9ECCBABA230878C00061805A /* TennisShotTracker WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9ECCBAAF230878BB0061805A /* TennisShotTracker WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				9ECCBAB0230878BB0061805A /* Interface.storyboard */,
+				9ECCBAB3230878C00061805A /* Assets.xcassets */,
+				9ECCBAB5230878C00061805A /* Info.plist */,
+			);
+			path = "TennisShotTracker WatchKit App";
+			sourceTree = "<group>";
+		};
+		9ECCBABE230878C00061805A /* TennisShotTracker WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9E65DB45230ECD3100D55736 /* MyActivityClassifier 1.mlmodel */,
+				9ECCBADF2309D0380061805A /* TennisShotTracker WatchKit Extension.entitlements */,
+				9ECCBABF230878C00061805A /* InterfaceController.swift */,
+				9ECCBAC1230878C00061805A /* ExtensionDelegate.swift */,
+				9ECCBAC3230878C00061805A /* ComplicationController.swift */,
+				9ECCBAD52308790F0061805A /* MotionManager.swift */,
+				9ECCBAD7230879AC0061805A /* RunningBuffer.swift */,
+				9ECCBAC5230878C20061805A /* Assets.xcassets */,
+				9ECCBAC7230878C20061805A /* Info.plist */,
+				9ECCBAD923087F2E0061805A /* WorkoutManager.swift */,
+			);
+			path = "TennisShotTracker WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		9ECCBAE02309D0380061805A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9ECCBAE12309D0380061805A /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9ECCBAA6230878BB0061805A /* TennisShotTracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9ECCBAD2230878C20061805A /* Build configuration list for PBXNativeTarget "TennisShotTracker" */;
+			buildPhases = (
+				9ECCBAA5230878BB0061805A /* Resources */,
+				9ECCBAD1230878C20061805A /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9ECCBAAE230878BB0061805A /* PBXTargetDependency */,
+			);
+			name = TennisShotTracker;
+			productName = TennisShotTracker;
+			productReference = 9ECCBAA7230878BB0061805A /* TennisShotTracker.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		9ECCBAAA230878BB0061805A /* TennisShotTracker WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9ECCBACE230878C20061805A /* Build configuration list for PBXNativeTarget "TennisShotTracker WatchKit App" */;
+			buildPhases = (
+				9ECCBAA9230878BB0061805A /* Resources */,
+				9ECCBACD230878C20061805A /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9ECCBABD230878C00061805A /* PBXTargetDependency */,
+			);
+			name = "TennisShotTracker WatchKit App";
+			productName = "TennisShotTracker WatchKit App";
+			productReference = 9ECCBAAB230878BB0061805A /* TennisShotTracker WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		9ECCBAB9230878C00061805A /* TennisShotTracker WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9ECCBACA230878C20061805A /* Build configuration list for PBXNativeTarget "TennisShotTracker WatchKit Extension" */;
+			buildPhases = (
+				9ECCBAB6230878C00061805A /* Sources */,
+				9ECCBAB7230878C00061805A /* Frameworks */,
+				9ECCBAB8230878C00061805A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TennisShotTracker WatchKit Extension";
+			productName = "TennisShotTracker WatchKit Extension";
+			productReference = 9ECCBABA230878C00061805A /* TennisShotTracker WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9ECCBAA1230878BB0061805A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = "Artyom Tereshchenko";
+				TargetAttributes = {
+					9ECCBAA6230878BB0061805A = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					9ECCBAAA230878BB0061805A = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					9ECCBAB9230878C00061805A = {
+						CreatedOnToolsVersion = 11.0;
+					};
+				};
+			};
+			buildConfigurationList = 9ECCBAA4230878BB0061805A /* Build configuration list for PBXProject "TennisShotTracker" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9ECCBAA0230878BB0061805A;
+			productRefGroup = 9ECCBAA8230878BB0061805A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9ECCBAA6230878BB0061805A /* TennisShotTracker */,
+				9ECCBAAA230878BB0061805A /* TennisShotTracker WatchKit App */,
+				9ECCBAB9230878C00061805A /* TennisShotTracker WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9ECCBAA5230878BB0061805A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9ECCBAA9230878BB0061805A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9ECCBAB4230878C00061805A /* Assets.xcassets in Resources */,
+				9ECCBAB2230878BB0061805A /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9ECCBAB8230878C00061805A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9ECCBAC6230878C20061805A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9ECCBAB6230878C00061805A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9ECCBAD8230879AC0061805A /* RunningBuffer.swift in Sources */,
+				9ECCBAC2230878C00061805A /* ExtensionDelegate.swift in Sources */,
+				9ECCBAC0230878C00061805A /* InterfaceController.swift in Sources */,
+				9ECCBAC4230878C00061805A /* ComplicationController.swift in Sources */,
+				9ECCBAD62308790F0061805A /* MotionManager.swift in Sources */,
+				9ECCBADA23087F2E0061805A /* WorkoutManager.swift in Sources */,
+				9E65DB46230ECD3100D55736 /* MyActivityClassifier 1.mlmodel in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9ECCBAAE230878BB0061805A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9ECCBAAA230878BB0061805A /* TennisShotTracker WatchKit App */;
+			targetProxy = 9ECCBAAD230878BB0061805A /* PBXContainerItemProxy */;
+		};
+		9ECCBABD230878C00061805A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9ECCBAB9230878C00061805A /* TennisShotTracker WatchKit Extension */;
+			targetProxy = 9ECCBABC230878C00061805A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9ECCBAB0230878BB0061805A /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9ECCBAB1230878BB0061805A /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9ECCBAC8230878C20061805A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9ECCBAC9230878C20061805A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9ECCBACB230878C20061805A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "TennisShotTracker WatchKit Extension/TennisShotTracker WatchKit Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KBFV5BSM39;
+				INFOPLIST_FILE = "TennisShotTracker WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = corbandalas.TennisShotTracker.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Debug;
+		};
+		9ECCBACC230878C20061805A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "TennisShotTracker WatchKit Extension/TennisShotTracker WatchKit Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KBFV5BSM39;
+				INFOPLIST_FILE = "TennisShotTracker WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = corbandalas.TennisShotTracker.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Release;
+		};
+		9ECCBACF230878C20061805A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KBFV5BSM39;
+				IBSC_MODULE = TennisShotTracker_WatchKit_Extension;
+				INFOPLIST_FILE = "TennisShotTracker WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = corbandalas.TennisShotTracker.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Debug;
+		};
+		9ECCBAD0230878C20061805A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KBFV5BSM39;
+				IBSC_MODULE = TennisShotTracker_WatchKit_Extension;
+				INFOPLIST_FILE = "TennisShotTracker WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = corbandalas.TennisShotTracker.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Release;
+		};
+		9ECCBAD3230878C20061805A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KBFV5BSM39;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = corbandalas.TennisShotTracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		9ECCBAD4230878C20061805A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KBFV5BSM39;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = corbandalas.TennisShotTracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9ECCBAA4230878BB0061805A /* Build configuration list for PBXProject "TennisShotTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9ECCBAC8230878C20061805A /* Debug */,
+				9ECCBAC9230878C20061805A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9ECCBACA230878C20061805A /* Build configuration list for PBXNativeTarget "TennisShotTracker WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9ECCBACB230878C20061805A /* Debug */,
+				9ECCBACC230878C20061805A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9ECCBACE230878C20061805A /* Build configuration list for PBXNativeTarget "TennisShotTracker WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9ECCBACF230878C20061805A /* Debug */,
+				9ECCBAD0230878C20061805A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9ECCBAD2230878C20061805A /* Build configuration list for PBXNativeTarget "TennisShotTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9ECCBAD3230878C20061805A /* Debug */,
+				9ECCBAD4230878C20061805A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9ECCBAA1230878BB0061805A /* Project object */;
+}

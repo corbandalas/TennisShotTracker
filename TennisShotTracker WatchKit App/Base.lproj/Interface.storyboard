@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14854.2" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14806.4"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14640.1"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="TennisShotTracker_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label height="23" alignment="left" text="Force Touch to Begin" textAlignment="center" id="RbS-sC-VZR" userLabel="TitleLabel">
+                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                        </label>
+                        <label width="106" alignment="left" text="Forehand:" id="hJL-ld-kwF" userLabel="ForehandLabel"/>
+                        <label alignment="left" text="0" id="XPe-MX-Z3e" userLabel="ForehandCount"/>
+                        <label alignment="left" text="Backhand:" id="0BW-Ro-cHV" userLabel="BackhandLabel"/>
+                        <label alignment="left" text="0" id="Fqd-4Y-r6H" userLabel="BackhandCount"/>
+                        <label alignment="left" id="zmJ-WO-gkr"/>
+                    </items>
+                    <menu key="menu" id="qCD-v0-na3">
+                        <items>
+                            <menuItem title="Stop Workout" icon="decline" id="lFN-nc-hoY">
+                                <connections>
+                                    <action selector="stopWorkOut" destination="AgC-eL-Hgc" id="b8n-0R-JTY"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Start Workout" icon="accept" id="NPX-55-4zE">
+                                <connections>
+                                    <action selector="startWorkOut" destination="AgC-eL-Hgc" id="yUs-YF-yhr"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="backhandCountLabel" destination="Fqd-4Y-r6H" id="Ypb-GJ-QAm"/>
+                        <outlet property="forehandCountLabel" destination="XPe-MX-Z3e" id="fVo-Z8-YCd"/>
+                        <outlet property="predictedShotLabel" destination="zmJ-WO-gkr" id="tYI-j9-txa"/>
+                        <outlet property="titleLabel" destination="RbS-sC-VZR" id="c9S-21-mY3"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="40" y="31"/>
+        </scene>
+    </scenes>
+</document>

@@ -67,7 +67,7 @@ class MotionManager {
     let gravityYBuffer = RunningBuffer(size: ModelConstants.predictionWindowSize)
     let gravityZBuffer = RunningBuffer(size: ModelConstants.predictionWindowSize)
     
-    let model = MyActivityClassifier_1()
+    let model = TennisShotClassifier_1()
     
    
     let predictionWindowDataArray = try? MLMultiArray(shape: [NSNumber(value: ModelConstants.predictionWindowSize)], dataType: MLMultiArrayDataType.double)
@@ -315,7 +315,7 @@ class MotionManager {
     func performModelPrediction () -> String? {
         
 
-        guard let prediction = try? model.prediction(acc_x: convertToMLArray(accelerationXBuffer.buffer), acc_y: convertToMLArray(accelerationYBuffer.buffer), acc_z: convertToMLArray(accelerationZBuffer.buffer), rot_x: convertToMLArray(rotationXBuffer.buffer), rot_y: convertToMLArray(rotationYBuffer.buffer), rot_z: convertToMLArray(rotationZBuffer.buffer), stateIn: nil)
+        guard let prediction = try? model.prediction(acc_x: convertToMLArray(accelerationXBuffer.buffer), acc_y: convertToMLArray(accelerationYBuffer.buffer), acc_z: convertToMLArray(accelerationZBuffer.buffer),giro_x: convertToMLArray(gravityXBuffer.buffer), giro_y: convertToMLArray(gravityYBuffer.buffer), giro_z: convertToMLArray(gravityZBuffer.buffer), rot_x: convertToMLArray(rotationXBuffer.buffer), rot_y: convertToMLArray(rotationYBuffer.buffer), rot_z: convertToMLArray(rotationZBuffer.buffer), stateIn: nil)
         else {
                 return "N/A"
         }

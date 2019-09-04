@@ -37,7 +37,10 @@ struct ModelConstants {
 }
 
 
-class MotionManager {
+class MotionManager: NSObject {
+    
+    static let shared = MotionManager()
+    
     // MARK: Properties
     
     let motionManager = CMMotionManager()
@@ -85,7 +88,7 @@ class MotionManager {
     
     // MARK: Initialization
     
-    init() {
+    private override init() {
         // Serial queue for sample handling and calculations.
         queue.maxConcurrentOperationCount = 1
         queue.name = "MotionManagerQueue"
@@ -324,7 +327,7 @@ class MotionManager {
     
         let predictPercent = prediction.labelProbability[prediction.label]
         
-        if (Double(0.4).isLess(than: predictPercent!)) {
+        if (Double(0.55).isLess(than: predictPercent!)) {
             return prediction.label
         } else {
             return "none"

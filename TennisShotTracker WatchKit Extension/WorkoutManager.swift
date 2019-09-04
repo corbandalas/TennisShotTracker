@@ -9,6 +9,7 @@
 
 import Foundation
 import HealthKit
+import WatchKit
 
 /**
  `WorkoutManagerDelegate` exists to inform delegates of swing data changes.
@@ -21,12 +22,15 @@ protocol WorkoutManagerDelegate: class {
 
 class WorkoutManager: MotionManagerDelegate {
     // MARK: Properties
-    let motionManager = MotionManager()
-    let healthStore = HKHealthStore()
+  
 
     weak var delegate: WorkoutManagerDelegate?
-    var session: HKWorkoutSession?
-
+    var session: HKWorkoutSession!
+    var builder: HKLiveWorkoutBuilder!
+    let motionManager = MotionManager.shared
+    let healthStore = HKHealthStore()
+    
+    
     // MARK: Initialization
     
     init() {
@@ -40,20 +44,57 @@ class WorkoutManager: MotionManagerDelegate {
         if (session != nil) {
             return
         }
+        
+        /// Requesting authorization.
+        /// - Tag: RequestAuthorization
+        // The quantity type to write to the health store.
+        let typesToShare: Set = [
+            HKQuantityType.workoutType()
+        ]
+               
+        // The quantity types to read from the health store.
+        let typesToRead: Set = [
+            HKQuantityType.quantityType(forIdentifier: .heartRate)!,
+            HKQuantityType.quantityType(forIdentifier: .activeEnergyBurned)!,
+            HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning)!
+        ]
+               
+        // Request authorization for those quantity types.
+        healthStore.requestAuthorization(toShare: typesToShare, read: typesToRead) { (success, error) in
+            // Handle error. No error handling in this sample project.
+        }
 
         // Configure the workout session.
         let workoutConfiguration = HKWorkoutConfiguration()
         workoutConfiguration.activityType = .tennis
         workoutConfiguration.locationType = .outdoor
 
+        
+        
         do {
-            session = try HKWorkoutSession(configuration: workoutConfiguration)
+            session = try HKWorkoutSession(healthStore: healthStore, configuration: workoutConfiguration)
+            builder = session.associatedWorkoutBuilder()
         } catch {
             fatalError("Unable to create the workout session!")
         }
 
         // Start the workout session and device motion updates.
-        healthStore.start(session!)
+        
+        // Setup session and builder.
+//        session.delegate = self
+//        builder.delegate = self
+        
+        /// Set the workout builder's data source.
+        /// - Tag: SetDataSource
+//        builder.dataSource = HKLiveWorkoutDataSource(healthStore: healthStore,
+//                                                     workoutConfiguration: configuration)
+        
+        // Start the workout session and begin data collection.
+        /// - Tag: StartSession
+//        session.startActivity(with: Date())
+//        builder.beginCollection(withStart: Date()) { (success, error) in
+//            self.setDurationTimerDate(.running)
+//        }
         motionManager.startUpdates()
     }
 
@@ -65,8 +106,10 @@ class WorkoutManager: MotionManagerDelegate {
 
         // Stop the device motion updates and workout session.
         motionManager.stopUpdates()
-        healthStore.end(session!)
+//        healthStore.end(session!)
 
+        session?.end()
+        
         // Clear the workout session.
         session = nil
     }

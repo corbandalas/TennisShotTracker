@@ -17,8 +17,7 @@ import CoreML
  These contexts can be used to enable application specific behavior.
  */
 protocol MotionManagerDelegate: class {
-    func didUpdateForehandSwingCount(_ manager: MotionManager, forehandCount: Int)
-    func didUpdateBackhandSwingCount(_ manager: MotionManager, backhandCount: Int)
+    func didUpdateShotCount(_ manager: MotionManager, shotType: String, count: Int)
 }
 
 extension Date {
@@ -70,7 +69,7 @@ class MotionManager: NSObject {
     let gravityYBuffer = RunningBuffer(size: ModelConstants.predictionWindowSize)
     let gravityZBuffer = RunningBuffer(size: ModelConstants.predictionWindowSize)
     
-    let model = TennisShotClassifier_1()
+    let model = TennisShotActivityRightHandModel()
     
    
     let predictionWindowDataArray = try? MLMultiArray(shape: [NSNumber(value: ModelConstants.predictionWindowSize)], dataType: MLMultiArrayDataType.double)
@@ -79,8 +78,14 @@ class MotionManager: NSObject {
     weak var delegate: MotionManagerDelegate?
 
     /// Swing counts.
-    var forehandCount = 0
-    var backhandCount = 0
+    var forehandSpinCount = 0
+    var forehandSliceCount = 0
+    var forehandVolleyCount = 0
+    var backhandSpinCount = 0
+    var backhandSliceCount = 0
+    var backhandVolleyCount = 0
+    var single_handed_backhandCount = 0
+    var serveCount = 0
 
     var recentDetection = false
     var shotDetected = false
@@ -193,11 +198,42 @@ class MotionManager: NSObject {
                 
                 rateAlongGravityBuffer.reset()
                 
-                if (modelPrediction! == "forehand") {
-                    incrementForehandCountAndUpdateDelegate()
-                } else if (modelPrediction! == "backhand") {
-                    incrementBackhandCountAndUpdateDelegate()
+                if (modelPrediction != "none") {
+                    
+                    var count = 0
+                    
+                    if (modelPrediction == "forehand_spin") {
+                        forehandSpinCount += 1
+                        count = forehandSpinCount
+                    } else if (modelPrediction == "forehand_slice") {
+                        forehandSliceCount += 1
+                        count = forehandSliceCount
+                    } else if (modelPrediction == "forehand_volley") {
+                        forehandVolleyCount += 1
+                        count = forehandVolleyCount
+                    } else if (modelPrediction == "backhand_spin") {
+                        backhandSpinCount += 1
+                        count = backhandSpinCount
+                    } else if (modelPrediction == "backhand_slice") {
+                        backhandSliceCount += 1
+                        count = backhandSliceCount
+                    } else if (modelPrediction == "backhand_volley") {
+                        backhandVolleyCount += 1
+                        count = backhandVolleyCount
+                    } else if (modelPrediction == "serve") {
+                        serveCount += 1
+                        count = serveCount
+                    } else if (modelPrediction == "single_handed_backhand") {
+                        single_handed_backhandCount += 1
+                        count = single_handed_backhandCount
+                    }
+                    
+                    recentDetection = true
+                    
+                    delegate?.didUpdateShotCount(self, shotType: modelPrediction!, count: count)
+
                 }
+                
             }
             
             
@@ -266,41 +302,23 @@ class MotionManager: NSObject {
         gravityYBuffer.reset()
         gravityZBuffer.reset()
     
-        forehandCount = 0
-        backhandCount = 0
+        forehandSpinCount = 0
+        forehandSliceCount = 0
+        forehandVolleyCount = 0
+        backhandSpinCount = 0
+        backhandSliceCount = 0
+        backhandVolleyCount = 0
+        single_handed_backhandCount = 0
+        serveCount = 0
+        
         recentDetection = false
 
-        updateForehandSwingDelegate()
-        updateBackhandSwingDelegate()
+       
     }
 
-    func incrementForehandCountAndUpdateDelegate() {
-//        if (!recentDetection) {
-            forehandCount += 1
-            recentDetection = true
+  
 
-//            print("Forehand swing. Count: \(forehandCount)")
-            updateForehandSwingDelegate()
-//        }
-    }
-
-    func incrementBackhandCountAndUpdateDelegate() {
-//        if (!recentDetection) {
-            backhandCount += 1
-            recentDetection = true
-
-//            print("Backhand swing. Count: \(backhandCount)")
-            updateBackhandSwingDelegate()
-//        }
-    }
-
-    func updateForehandSwingDelegate() {
-        delegate?.didUpdateForehandSwingCount(self, forehandCount:forehandCount)
-    }
-
-    func updateBackhandSwingDelegate() {
-        delegate?.didUpdateBackhandSwingCount(self, backhandCount:backhandCount)
-    }
+   
     
     func convertToMLArray(_ input: [Double]) -> MLMultiArray {
 

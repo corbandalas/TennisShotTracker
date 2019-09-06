@@ -6,12 +6,12 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14642"/>
     </dependencies>
     <scenes>
-        <!--id1-->
+        <!--interfaceController-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller identifier="id1" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="TennisShotTracker_WatchKit_App" customModuleProvider="target">
+                <controller identifier="interfaceController" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="TennisShotTracker_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <group width="1" alignment="left" id="tl1-3M-Lue">
+                        <group width="1" height="128" alignment="left" id="tl1-3M-Lue">
                             <items>
                                 <group width="96" alignment="left" layout="vertical" spacing="0.0" id="nW4-cK-g1z">
                                     <items>
@@ -142,68 +142,129 @@
                                     </items>
                                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
                                 </group>
-                                <group alignment="right" layout="vertical" id="m4S-Sz-lv6">
+                                <separator alignment="left" id="JTJ-Ky-unv"/>
+                                <group width="73" alignment="right" layout="vertical" spacing="2" id="m4S-Sz-lv6">
                                     <items>
-                                        <label alignment="left" text="Forehand" id="k85-ng-HDd">
-                                            <fontDescription key="font" type="boldSystem" pointSize="16"/>
-                                            <variation key="device=watch38mm">
-                                                <fontDescription key="font" type="boldSystem" pointSize="7"/>
-                                            </variation>
-                                            <variation key="device=watch40mm">
-                                                <fontDescription key="font" type="boldSystem" pointSize="11"/>
-                                            </variation>
-                                            <variation key="device=watch42mm">
-                                                <fontDescription key="font" type="boldSystem" pointSize="11"/>
-                                            </variation>
-                                            <variation key="device=watch44mm">
-                                                <fontDescription key="font" type="boldSystem" pointSize="16"/>
-                                            </variation>
-                                        </label>
-                                        <label alignment="left" text="0" id="FZ3-ut-bnL">
-                                            <fontDescription key="font" type="system" pointSize="16"/>
-                                            <variation key="device=watch38mm">
-                                                <fontDescription key="font" type="system" pointSize="14"/>
-                                            </variation>
-                                            <variation key="device=watch40mm">
-                                                <fontDescription key="font" type="system" pointSize="14"/>
-                                            </variation>
-                                            <variation key="device=watch42mm">
-                                                <fontDescription key="font" type="system" pointSize="14"/>
-                                            </variation>
-                                            <variation key="device=watch44mm">
-                                                <fontDescription key="font" type="system" pointSize="16"/>
-                                            </variation>
-                                        </label>
-                                        <label alignment="left" text="Backhand" id="0FO-t1-bLK">
-                                            <fontDescription key="font" type="boldSystem" pointSize="16"/>
-                                            <variation key="device=watch38mm">
-                                                <fontDescription key="font" type="boldSystem" pointSize="7"/>
-                                            </variation>
-                                            <variation key="device=watch40mm">
-                                                <fontDescription key="font" type="boldSystem" pointSize="11"/>
-                                            </variation>
-                                            <variation key="device=watch42mm">
-                                                <fontDescription key="font" type="boldSystem" pointSize="11"/>
-                                            </variation>
-                                            <variation key="device=watch44mm">
-                                                <fontDescription key="font" type="boldSystem" pointSize="16"/>
-                                            </variation>
-                                        </label>
-                                        <label alignment="left" text="0" id="0dh-zf-mhb">
-                                            <fontDescription key="font" type="system" pointSize="16"/>
-                                            <variation key="device=watch38mm">
-                                                <fontDescription key="font" type="system" pointSize="14"/>
-                                            </variation>
-                                            <variation key="device=watch40mm">
-                                                <fontDescription key="font" type="system" pointSize="14"/>
-                                            </variation>
-                                            <variation key="device=watch42mm">
-                                                <fontDescription key="font" type="system" pointSize="14"/>
-                                            </variation>
-                                            <variation key="device=watch44mm">
-                                                <fontDescription key="font" type="system" pointSize="16"/>
-                                            </variation>
-                                        </label>
+                                        <group width="1" alignment="left" layout="vertical" spacing="0.0" id="0OC-JE-kBA">
+                                            <items>
+                                                <label alignment="left" text="Forehand" id="5TP-e9-i6e">
+                                                    <fontDescription key="font" type="boldSystem" pointSize="10"/>
+                                                    <variation key="device=watch38mm">
+                                                        <fontDescription key="font" type="boldSystem" pointSize="7"/>
+                                                    </variation>
+                                                </label>
+                                                <group width="1" alignment="left" id="qkG-cX-QHL">
+                                                    <items>
+                                                        <label alignment="left" text="Spin" id="qIZ-02-o1G">
+                                                            <fontDescription key="font" type="system" pointSize="10"/>
+                                                            <variation key="device=watch38mm">
+                                                                <fontDescription key="font" type="system" pointSize="7"/>
+                                                            </variation>
+                                                        </label>
+                                                        <label alignment="left" text="0" id="YUT-Ku-xlC">
+                                                            <fontDescription key="font" type="system" pointSize="10"/>
+                                                            <variation key="device=watch38mm">
+                                                                <fontDescription key="font" type="system" pointSize="7"/>
+                                                            </variation>
+                                                        </label>
+                                                    </items>
+                                                </group>
+                                                <group width="1" alignment="left" id="qoT-ME-ySl">
+                                                    <items>
+                                                        <label height="12" alignment="left" text="Slice" id="0oE-S6-6fY">
+                                                            <fontDescription key="font" type="system" pointSize="10"/>
+                                                            <variation key="device=watch38mm">
+                                                                <fontDescription key="font" type="system" pointSize="7"/>
+                                                            </variation>
+                                                        </label>
+                                                        <label alignment="left" text="0" id="9XP-sg-g4Z">
+                                                            <fontDescription key="font" type="system" pointSize="10"/>
+                                                            <variation key="device=watch38mm">
+                                                                <fontDescription key="font" type="system" pointSize="7"/>
+                                                            </variation>
+                                                        </label>
+                                                    </items>
+                                                </group>
+                                            </items>
+                                        </group>
+                                        <group width="1" alignment="left" layout="vertical" spacing="0.0" id="Wpa-7E-wrT">
+                                            <items>
+                                                <label alignment="left" text="Backhand" id="LAa-7I-hqt">
+                                                    <fontDescription key="font" type="boldSystem" pointSize="10"/>
+                                                    <variation key="device=watch38mm">
+                                                        <fontDescription key="font" type="boldSystem" pointSize="7"/>
+                                                    </variation>
+                                                </label>
+                                                <group width="1" alignment="left" id="njs-4X-A4h">
+                                                    <items>
+                                                        <label alignment="left" text="Spin" id="9K9-le-H6E">
+                                                            <fontDescription key="font" type="system" pointSize="10"/>
+                                                            <variation key="device=watch38mm">
+                                                                <fontDescription key="font" type="system" pointSize="7"/>
+                                                            </variation>
+                                                        </label>
+                                                        <label alignment="left" text="0" id="69K-bY-dZh">
+                                                            <fontDescription key="font" type="system" pointSize="10"/>
+                                                            <variation key="device=watch38mm">
+                                                                <fontDescription key="font" type="system" pointSize="7"/>
+                                                            </variation>
+                                                        </label>
+                                                    </items>
+                                                </group>
+                                                <group width="1" alignment="left" id="YIm-6Y-41z">
+                                                    <items>
+                                                        <label height="12" alignment="left" text="Slice" id="77u-yp-IG0">
+                                                            <fontDescription key="font" type="system" pointSize="10"/>
+                                                            <variation key="device=watch38mm">
+                                                                <fontDescription key="font" type="system" pointSize="7"/>
+                                                            </variation>
+                                                        </label>
+                                                        <label alignment="left" text="0" id="jKd-kG-wLy">
+                                                            <fontDescription key="font" type="system" pointSize="10"/>
+                                                            <variation key="device=watch38mm">
+                                                                <fontDescription key="font" type="system" pointSize="7"/>
+                                                            </variation>
+                                                        </label>
+                                                    </items>
+                                                </group>
+                                                <group width="1" alignment="left" id="29t-IA-u36">
+                                                    <items>
+                                                        <label height="12" alignment="left" text="Single hand" numberOfLines="2" id="IAr-6h-WNs">
+                                                            <fontDescription key="font" type="system" pointSize="10"/>
+                                                            <variation key="device=watch38mm">
+                                                                <fontDescription key="font" type="system" pointSize="7"/>
+                                                            </variation>
+                                                        </label>
+                                                        <label alignment="left" text="0" id="NJf-JZ-mY3">
+                                                            <fontDescription key="font" type="system" pointSize="10"/>
+                                                            <variation key="device=watch38mm">
+                                                                <fontDescription key="font" type="system" pointSize="7"/>
+                                                            </variation>
+                                                        </label>
+                                                    </items>
+                                                </group>
+                                            </items>
+                                        </group>
+                                        <group width="1" alignment="left" layout="vertical" spacing="0.0" id="Pvw-gl-H6b">
+                                            <items>
+                                                <group width="1" alignment="left" id="PCQ-rr-XAs">
+                                                    <items>
+                                                        <label height="12" alignment="left" text="Serve" numberOfLines="2" id="cdl-eO-lKx">
+                                                            <fontDescription key="font" type="boldSystem" pointSize="10"/>
+                                                            <variation key="device=watch38mm">
+                                                                <fontDescription key="font" type="system" pointSize="7"/>
+                                                            </variation>
+                                                        </label>
+                                                        <label alignment="left" text="0" id="jqv-jU-htZ">
+                                                            <fontDescription key="font" type="system" pointSize="10"/>
+                                                            <variation key="device=watch38mm">
+                                                                <fontDescription key="font" type="system" pointSize="7"/>
+                                                            </variation>
+                                                        </label>
+                                                    </items>
+                                                </group>
+                                            </items>
+                                        </group>
                                     </items>
                                 </group>
                             </items>
@@ -212,15 +273,19 @@
                     <menu key="menu" id="qCD-v0-na3"/>
                     <connections>
                         <outlet property="activeCaloriesLabel" destination="czV-0V-SF3" id="QaQ-2g-Rba"/>
-                        <outlet property="backhandCountLabel" destination="0dh-zf-mhb" id="sIK-vA-NNX"/>
+                        <outlet property="backhandSingleHandedCountLabel" destination="NJf-JZ-mY3" id="A4I-6v-h9Q"/>
+                        <outlet property="backhandSliceCountLabel" destination="jKd-kG-wLy" id="i3l-NX-P7V"/>
+                        <outlet property="backhandSpinCountLabel" destination="69K-bY-dZh" id="RQr-on-SQE"/>
                         <outlet property="distanceLabel" destination="ONx-Si-uvN" id="FPF-LX-XrQ"/>
-                        <outlet property="forehandCountLabel" destination="FZ3-ut-bnL" id="Vlv-CT-w1l"/>
+                        <outlet property="forehandSliceCountLabel" destination="9XP-sg-g4Z" id="Y9H-wj-xS2"/>
+                        <outlet property="forehandSpinCountLabel" destination="YUT-Ku-xlC" id="7dS-qF-kLZ"/>
                         <outlet property="heartRateLabel" destination="9rY-1d-RAo" id="VYd-OM-HcH"/>
+                        <outlet property="serveCountLabel" destination="jqv-jU-htZ" id="FCb-WR-gmx"/>
                         <outlet property="timer" destination="unj-eg-RwX" id="Z1V-F4-8OR"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="40" y="31"/>
+            <point key="canvasLocation" x="39.913043478260867" y="30.357142857142858"/>
         </scene>
     </scenes>
 </document>

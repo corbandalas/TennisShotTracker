@@ -20,28 +20,41 @@ class InterfaceController: WKInterfaceController,  HKWorkoutSessionDelegate, HKL
     var active = false
 
     let healthStore = HKHealthStore()
-    var configuration: HKWorkoutConfiguration!
     var session: HKWorkoutSession!
     var builder: HKLiveWorkoutBuilder!
    
 
-    var forehandCount = 0
-    var backhandCount = 0
-
+    var forehandSpinCount = 0
+    var forehandSliceCount = 0
+    var forehandVolleyCount = 0
+    var backhandSpinCount = 0
+    var backhandSliceCount = 0
+    var backhandVolleyCount = 0
+    var single_handed_backhandCount = 0
+    var serveCount = 0
 
     @IBOutlet weak var timer: WKInterfaceTimer!
     @IBOutlet weak var activeCaloriesLabel: WKInterfaceLabel!
     @IBOutlet weak var heartRateLabel: WKInterfaceLabel!
     @IBOutlet weak var distanceLabel: WKInterfaceLabel!
     
-    @IBOutlet weak var forehandCountLabel: WKInterfaceLabel!
-    @IBOutlet weak var backhandCountLabel: WKInterfaceLabel!
+    @IBOutlet weak var forehandSpinCountLabel: WKInterfaceLabel!
+    @IBOutlet weak var forehandSliceCountLabel: WKInterfaceLabel!
+    @IBOutlet weak var forehandVolleyCountLabel: WKInterfaceLabel!
+    
+    
+    @IBOutlet weak var backhandSpinCountLabel: WKInterfaceLabel!
+    
+    @IBOutlet weak var backhandSliceCountLabel: WKInterfaceLabel!
+    @IBOutlet weak var backhandVolleyCountLabel: WKInterfaceLabel!
+    @IBOutlet weak var backhandSingleHandedCountLabel: WKInterfaceLabel!
+    
+    @IBOutlet weak var serveCountLabel: WKInterfaceLabel!
     override init() {
         super.init()
-        
-//        workoutManager.delegate = self
+
         setupMenuItemsForWorkoutSessionState(.notStarted)
-       MotionManager.shared.delegate = self
+        MotionManager.shared.delegate = self
       
     }
 
@@ -74,7 +87,8 @@ class InterfaceController: WKInterfaceController,  HKWorkoutSessionDelegate, HKL
     
     /// Set up the contextual menu based on the workout session state.
     func setupMenuItemsForWorkoutSessionState(_ state: HKWorkoutSessionState) {
-           clearAllMenuItems()
+        
+        clearAllMenuItems()
         
         if state == .notStarted {
             addMenuItem(with: .play, title: "Start", action: #selector(startWorkoutAction))
@@ -114,7 +128,7 @@ class InterfaceController: WKInterfaceController,  HKWorkoutSessionDelegate, HKL
     // MARK: - State Control
        func pauseWorkout() {
            session.pause()
-           setupMenuItemsForWorkoutSessionState(.paused)
+        setupMenuItemsForWorkoutSessionState(.paused)
         MotionManager.shared.stopUpdates()
        }
        
@@ -144,12 +158,7 @@ class InterfaceController: WKInterfaceController,  HKWorkoutSessionDelegate, HKL
     
     func startWorkout() {
         
-//        titleLabel.setText("Workout started")
-        
-//        // If we have already started the workout, then do nothing.
-//        if (session != nil) {
-//            return
-//        }
+
                 
         /// Requesting authorization.
         /// - Tag: RequestAuthorization
@@ -192,7 +201,7 @@ class InterfaceController: WKInterfaceController,  HKWorkoutSessionDelegate, HKL
                 
         
         
-        let dataSource = HKLiveWorkoutDataSource(healthStore: healthStore, workoutConfiguration: configuration)
+        let dataSource = HKLiveWorkoutDataSource(healthStore: healthStore, workoutConfiguration: workoutConfiguration)
 
         if let hr = HKQuantityType.quantityType(forIdentifier: .heartRate) {
             dataSource.enableCollection(for: hr, predicate: nil)
@@ -207,10 +216,7 @@ class InterfaceController: WKInterfaceController,  HKWorkoutSessionDelegate, HKL
         
         builder.dataSource = dataSource
         
-        /// Set the workout builder's data source.
-        // - Tag: SetDataSource
-//        builder.dataSource = HKLiveWorkoutDataSource(healthStore: healthStore,
-//                                                             workoutConfiguration: configuration)
+
                 
         // Start the workout session and begin data collection.
         // - Tag: StartSession
@@ -341,25 +347,45 @@ class InterfaceController: WKInterfaceController,  HKWorkoutSessionDelegate, HKL
     
     func updateLabels() {
            if active {
-               forehandCountLabel.setText("\(forehandCount)")
-               backhandCountLabel.setText("\(backhandCount)")
+                forehandSpinCountLabel.setText("\(forehandSpinCount)")
+                forehandSliceCountLabel.setText("\(forehandSliceCount)")
+                forehandVolleyCountLabel.setText("\(forehandVolleyCount)")
+                backhandSpinCountLabel.setText("\(backhandSpinCount)")
+                backhandSliceCountLabel.setText("\(backhandSliceCount)")
+                backhandVolleyCountLabel.setText("\(backhandVolleyCount)")
+                backhandSingleHandedCountLabel.setText("\(single_handed_backhandCount)")
+                serveCountLabel.setText("\(serveCount)")
            }
     }
     
-      func didUpdateForehandSwingCount(_ manager: MotionManager, forehandCount: Int) {
-               /// Serialize the property access and UI updates on the main queue.
-                     DispatchQueue.main.async {
-                         self.forehandCount = forehandCount
-                         self.updateLabels()
-                     }
-          }
-          
-          func didUpdateBackhandSwingCount(_ manager: MotionManager, backhandCount: Int) {
-              /// Serialize the property access and UI updates on the main queue.
-              DispatchQueue.main.async {
-                  self.backhandCount = backhandCount
-                  self.updateLabels()
-              }
-          }
+    func didUpdateShotCount(_ manager: MotionManager, shotType: String, count: Int) {
+           /// Serialize the property access and UI updates on the main queue.
+           DispatchQueue.main.async {
+            
+                if (shotType == "forehand_spin") {
+                    self.forehandSpinCount = count
+                } else if (shotType == "forehand_slice") {
+                    self.forehandSliceCount = count
+                } else if (shotType == "forehand_volley") {
+                   self.forehandVolleyCount = count
+                } else if (shotType == "backhand_spin") {
+                    self.backhandSpinCount = count
+                } else if (shotType == "backhand_slice") {
+                    self.backhandSliceCount = count
+                } else if (shotType == "backhand_volley") {
+                    self.backhandVolleyCount = count
+                } else if (shotType == "serve") {
+                    self.serveCount = count
+                } else if (shotType == "single_handed_backhand") {
+                    self.single_handed_backhandCount = count
+                }
+            
+            
+               
+               self.updateLabels()
+           }
+       }
+    
+   
 
 }

@@ -158,23 +158,23 @@ class MotionManager: NSObject {
                    gravityYBuffer.addSample(deviceMotion.gravity.y)
                    gravityZBuffer.addSample(deviceMotion.gravity.z)
             
-            print(
-                String(deviceMotion.timestamp),           String(deviceMotion.userAcceleration.x),
-                                 String(deviceMotion.userAcceleration.y),
-                                 String(deviceMotion.userAcceleration.z),
-                                 String(deviceMotion.rotationRate.x),
-                                 String(deviceMotion.rotationRate.y),
-                                 String(deviceMotion.rotationRate.z),
-                                 String(deviceMotion.gravity.x),
-                                 String(deviceMotion.gravity.y),
-                                 String(deviceMotion.gravity.z),
-
-                          separator: ",")
+//            print(
+//                String(deviceMotion.timestamp),           String(deviceMotion.userAcceleration.x),
+//                                 String(deviceMotion.userAcceleration.y),
+//                                 String(deviceMotion.userAcceleration.z),
+//                                 String(deviceMotion.rotationRate.x),
+//                                 String(deviceMotion.rotationRate.y),
+//                                 String(deviceMotion.rotationRate.z),
+//                                 String(deviceMotion.gravity.x),
+//                                 String(deviceMotion.gravity.y),
+//                                 String(deviceMotion.gravity.z),
+//
+//                          separator: ",")
             
             
             return
         } else {
-            print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+//            print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
             
             if (!shotDetected) {
                 let modelPrediction = performModelPrediction()
@@ -341,11 +341,13 @@ class MotionManager: NSObject {
                 return "N/A"
         }
                                    
-//        print("Predicted class:  \(prediction.labelProbability)" )
+      
     
         let predictPercent = prediction.labelProbability[prediction.label]
         
-        if (Double(0.55).isLess(than: predictPercent!)) {
+        print("Predicted class:  \(prediction.label) \(predictPercent!)" )
+        
+        if (Double(0.8).isLess(than: predictPercent!)) {
             return prediction.label
         } else {
             return "none"

@@ -18,6 +18,7 @@
 		9ECCBAD62308790F0061805A /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECCBAD52308790F0061805A /* MotionManager.swift */; };
 		9ECCBAD8230879AC0061805A /* RunningBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECCBAD7230879AC0061805A /* RunningBuffer.swift */; };
 		9ECCBAE22309D0380061805A /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ECCBAE12309D0380061805A /* HealthKit.framework */; };
+		A8503B9223238727002B19BE /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8503B9123238727002B19BE /* Workout.swift */; };
 		A85A68AC23214A6200EBFA33 /* ShotStatisticsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85A68AB23214A6200EBFA33 /* ShotStatisticsInterfaceController.swift */; };
 		A85A68AE2322325E00EBFA33 /* TennisShotActivityRightHandModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A85A68AD2322325E00EBFA33 /* TennisShotActivityRightHandModel.mlmodel */; };
 /* End PBXBuildFile section */
@@ -80,6 +81,7 @@
 		9ECCBAD7230879AC0061805A /* RunningBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningBuffer.swift; sourceTree = "<group>"; };
 		9ECCBADF2309D0380061805A /* TennisShotTracker WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TennisShotTracker WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		9ECCBAE12309D0380061805A /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS6.0.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		A8503B9123238727002B19BE /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		A85A68AB23214A6200EBFA33 /* ShotStatisticsInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShotStatisticsInterfaceController.swift; sourceTree = "<group>"; };
 		A85A68AD2322325E00EBFA33 /* TennisShotActivityRightHandModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = TennisShotActivityRightHandModel.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -137,6 +139,7 @@
 				9ECCBAC3230878C00061805A /* ComplicationController.swift */,
 				9ECCBAD52308790F0061805A /* MotionManager.swift */,
 				9ECCBAD7230879AC0061805A /* RunningBuffer.swift */,
+				A8503B9123238727002B19BE /* Workout.swift */,
 				9ECCBAC5230878C20061805A /* Assets.xcassets */,
 				9ECCBAC7230878C20061805A /* Info.plist */,
 			);
@@ -281,6 +284,7 @@
 				A85A68AC23214A6200EBFA33 /* ShotStatisticsInterfaceController.swift in Sources */,
 				9ECCBAD8230879AC0061805A /* RunningBuffer.swift in Sources */,
 				9ECCBAC2230878C00061805A /* ExtensionDelegate.swift in Sources */,
+				A8503B9223238727002B19BE /* Workout.swift in Sources */,
 				9ECCBAC0230878C00061805A /* InterfaceController.swift in Sources */,
 				9ECCBAC4230878C00061805A /* ComplicationController.swift in Sources */,
 				A85A68AE2322325E00EBFA33 /* TennisShotActivityRightHandModel.mlmodel in Sources */,

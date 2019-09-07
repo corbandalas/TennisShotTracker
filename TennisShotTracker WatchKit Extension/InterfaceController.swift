@@ -32,7 +32,11 @@ class InterfaceController: WKInterfaceController,  HKWorkoutSessionDelegate, HKL
     var backhandVolleyCount = 0
     var single_handed_backhandCount = 0
     var serveCount = 0
-
+    
+    var workoutState: HKWorkoutSessionState!
+    var workoutDistance = 0.0
+    var burnedCalories = 0.0
+    
     @IBOutlet weak var timer: WKInterfaceTimer!
     @IBOutlet weak var activeCaloriesLabel: WKInterfaceLabel!
     @IBOutlet weak var heartRateLabel: WKInterfaceLabel!
@@ -42,6 +46,9 @@ class InterfaceController: WKInterfaceController,  HKWorkoutSessionDelegate, HKL
     @IBOutlet weak var forehandSliceCountLabel: WKInterfaceLabel!
     @IBOutlet weak var forehandVolleyCountLabel: WKInterfaceLabel!
     
+    @IBOutlet weak var workoutStartButton: WKInterfaceButton!
+    
+    @IBOutlet weak var workoutStopButton: WKInterfaceButton!
     
     @IBOutlet weak var backhandSpinCountLabel: WKInterfaceLabel!
     
@@ -50,14 +57,18 @@ class InterfaceController: WKInterfaceController,  HKWorkoutSessionDelegate, HKL
     @IBOutlet weak var backhandSingleHandedCountLabel: WKInterfaceLabel!
     
     @IBOutlet weak var serveCountLabel: WKInterfaceLabel!
+    
     override init() {
         super.init()
+        
+        workoutState = .notStarted
 
-        setupMenuItemsForWorkoutSessionState(.notStarted)
+
+        setupMenuItemsForWorkoutSessionState(workoutState!)
         MotionManager.shared.delegate = self
       
     }
-
+    
     // MARK: WKInterfaceController
     
     override func willActivate() {
@@ -88,55 +99,97 @@ class InterfaceController: WKInterfaceController,  HKWorkoutSessionDelegate, HKL
     /// Set up the contextual menu based on the workout session state.
     func setupMenuItemsForWorkoutSessionState(_ state: HKWorkoutSessionState) {
         
-        clearAllMenuItems()
-        
-        if state == .notStarted {
-            addMenuItem(with: .play, title: "Start", action: #selector(startWorkoutAction))
+        if (workoutState! == .running) {
+            workoutStartButton.setTitle("Pause")
+            workoutStopButton.setHidden(false)
+            
+        } else if (workoutState! == .paused) {
+            workoutStartButton.setTitle("Resume")
+            workoutStopButton.setHidden(false)
+        } else if (workoutState! == .notStarted) {
+            workoutStopButton.setHidden(true)
+            workoutStartButton.setTitle("Start")
         }
         
-        if state == .running {
-               addMenuItem(with: .pause, title: "Pause", action: #selector(pauseWorkoutAction))
-        } else if state == .paused {
-               addMenuItem(with: .resume, title: "Resume", action: #selector(resumeWorkoutAction))
+        updateLabels()
+        
+        
+//        clearAllMenuItems()
+//
+//        if state == .notStarted {
+//            addMenuItem(with: .play, title: "Start", action: #selector(startWorkoutAction))
+//        }
+//
+//        if state == .running {
+//               addMenuItem(with: .pause, title: "Pause", action: #selector(pauseWorkoutAction))
+//        } else if state == .paused {
+//               addMenuItem(with: .resume, title: "Resume", action: #selector(resumeWorkoutAction))
+//        }
+//        addMenuItem(with: .decline, title: "End", action: #selector(endWorkoutAction))
+        
+        
+    }
+    
+    @IBAction func startButtonTapped() {
+        if (workoutState! == .notStarted) {
+            startWorkout()
+            workoutState = .running
+             WKInterfaceDevice.current().play(.start)
+        } else if (workoutState! == .running) {
+            pauseWorkout()
+            workoutState = .paused
+            WKInterfaceDevice.current().play(.stop)
+        } else if (workoutState! == .paused) {
+            resumeWorkout()
+            workoutState = .running
+            WKInterfaceDevice.current().play(.start)
         }
-        addMenuItem(with: .decline, title: "End", action: #selector(endWorkoutAction))
+        
+        setupMenuItemsForWorkoutSessionState(workoutState!)
+    }
+    
+    @IBAction func stopButtonTapped() {
+        endWorkout()
+        workoutState = .notStarted
+        WKInterfaceDevice.current().play(.stop)
+        setupMenuItemsForWorkoutSessionState(workoutState!)
     }
        
        /// Action for the "Pause" menu item.
-    @objc
-       func pauseWorkoutAction() {
+    @objc func pauseWorkoutAction() {
            pauseWorkout()
     }
        
        /// Action for the "Resume" menu item.
-    @objc
-    func resumeWorkoutAction() {
+    @objc func resumeWorkoutAction() {
            resumeWorkout()
     }
        
        /// Action for the "End" menu item.
-    @objc
-    func endWorkoutAction() {
+    @objc func endWorkoutAction() {
            endWorkout()
     }
     
-    @objc
-    func startWorkoutAction() {
+    @objc func startWorkoutAction() {
            startWorkout()
     }
     
     // MARK: - State Control
        func pauseWorkout() {
-           session.pause()
-        setupMenuItemsForWorkoutSessionState(.paused)
+        session.pause()
+//        setupMenuItemsForWorkoutSessionState(.paused)
         MotionManager.shared.stopUpdates()
-       }
+//        updateLabels()
+    }
        
        func resumeWorkout() {
-           session.resume()
-           setupMenuItemsForWorkoutSessionState(.running)
+           
+        session.resume()
+//        setupMenuItemsForWorkoutSessionState(.running)
         MotionManager.shared.startUpdates()
-       }
+//        updateLabels()
+    
+    }
        
        func endWorkout() {
            /// Update the timer based on the state we are in.
@@ -150,7 +203,9 @@ class InterfaceController: WKInterfaceController,  HKWorkoutSessionDelegate, HKL
 //                       self.dismiss()
 //                    self.titleLabel.setText("Workout stopped")
                     self.timer.stop()
-                    self.setupMenuItemsForWorkoutSessionState(.notStarted)
+                    self.saveWorkout()
+//                    self.setupMenuItemsForWorkoutSessionState(.notStarted)
+//                    self.updateLabels()
                    }
                }
            }
@@ -223,10 +278,26 @@ class InterfaceController: WKInterfaceController,  HKWorkoutSessionDelegate, HKL
         session.startActivity(with: Date())
         builder.beginCollection(withStart: Date()) { (success, error) in
             self.setDurationTimerDate(.running)
+            
         }
+        
+        
+        forehandSpinCount = 0
+        forehandSliceCount = 0
+        forehandVolleyCount = 0
+        backhandSpinCount = 0
+        backhandSliceCount = 0
+        backhandVolleyCount = 0
+        single_handed_backhandCount = 0
+        serveCount = 0
+        
+//        workoutState = .running
+        
+//        updateLabels()
+        
         MotionManager.shared.startUpdates()
         
-        setupMenuItemsForWorkoutSessionState(.running)
+//        setupMenuItemsForWorkoutSessionState(.running)
     }
 
 
@@ -277,12 +348,14 @@ class InterfaceController: WKInterfaceController,  HKWorkoutSessionDelegate, HKL
                 let value = statistics.sumQuantity()?.doubleValue(for: energyUnit)
                 let roundedValue = Double( round( 1 * value! ) / 1 )
                 label.setText("\(roundedValue)")
+                burnedCalories = roundedValue
                 return
             case HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning):
                 let meterUnit = HKUnit.meter()
                 let value = statistics.sumQuantity()?.doubleValue(for: meterUnit)
                 let roundedValue = Double( round( 1 * value! ) / 1 )
                 label.setText("\(roundedValue)")
+                workoutDistance = roundedValue
                 return
             default:
                 return
@@ -345,14 +418,18 @@ class InterfaceController: WKInterfaceController,  HKWorkoutSessionDelegate, HKL
            }
        }
     
+
     func updateLabels() {
            if active {
+            
+          
+            
                 forehandSpinCountLabel.setText("\(forehandSpinCount)")
                 forehandSliceCountLabel.setText("\(forehandSliceCount)")
-                forehandVolleyCountLabel.setText("\(forehandVolleyCount)")
+//                forehandVolleyCountLabel.setText("\(forehandVolleyCount)")
                 backhandSpinCountLabel.setText("\(backhandSpinCount)")
                 backhandSliceCountLabel.setText("\(backhandSliceCount)")
-                backhandVolleyCountLabel.setText("\(backhandVolleyCount)")
+//                backhandVolleyCountLabel.setText("\(backhandVolleyCount)")
                 backhandSingleHandedCountLabel.setText("\(single_handed_backhandCount)")
                 serveCountLabel.setText("\(serveCount)")
            }
@@ -380,12 +457,23 @@ class InterfaceController: WKInterfaceController,  HKWorkoutSessionDelegate, HKL
                     self.single_handed_backhandCount = count
                 }
             
-            
-               
                self.updateLabels()
            }
        }
     
+    func saveWorkout() {
+        
+        let workoutObject = Workout(date: builder.startDate!, workoutInterval: builder.elapsedTime, calBurned: burnedCalories, distance: workoutDistance, forehandSpinCount: forehandSpinCount, forehandSliceCount: forehandSliceCount, forehandVolleyCount: forehandVolleyCount, backhandSpinCount: backhandSpinCount, backhandSliceCount: backhandSliceCount, backhandVolleyCount: backhandVolleyCount, single_handed_backhandCount: single_handed_backhandCount, serveCount: serveCount, totalShots: forehandSpinCount + forehandSliceCount + forehandVolleyCount + backhandSpinCount + backhandSliceCount + backhandVolleyCount + single_handed_backhandCount)
+   
+        let encodedData = try? JSONEncoder().encode(workoutObject)
+        
+        let defaults = UserDefaults.standard
+        var myarray = defaults.stringArray(forKey: "workoutResults") ?? [String]()
+             
+        myarray.append(encodedData!.description)
+             
+        defaults.set(myarray, forKey: "workoutResults")
+    }
    
 
 }

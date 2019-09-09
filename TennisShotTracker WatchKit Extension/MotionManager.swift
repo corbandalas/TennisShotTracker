@@ -17,7 +17,7 @@ import CoreML
  These contexts can be used to enable application specific behavior.
  */
 protocol MotionManagerDelegate: class {
-    func didUpdateShotCount(_ manager: MotionManager, shotType: String, count: Int)
+    func didUpdateShotCount(_ manager: MotionManager, shotType: String, count: Int, speed: Double)
 }
 
 extension Date {
@@ -32,7 +32,11 @@ struct ModelConstants {
     // The app is using 50hz data and the buffer is going to hold 2s worth of data.
       
     static let sensorsUpdateInterval = 1.0 / 50.0
-  
+    
+    static let armLength = 0.6
+    static let racketLength = 0.68
+    static let zeta1Angle = 175.0 * Double.pi / 180
+    static let zeta2Angle = 135.0 * Double.pi / 180
 }
 
 
@@ -111,6 +115,7 @@ class MotionManager: NSObject {
         resetAllState()
 
         motionManager.deviceMotionUpdateInterval = ModelConstants.sensorsUpdateInterval
+        
         motionManager.startDeviceMotionUpdates(to: queue) { (deviceMotion: CMDeviceMotion?, error: Error?) in
             if error != nil {
                 print("Encountered error: \(error!)")
@@ -159,7 +164,8 @@ class MotionManager: NSObject {
                    gravityZBuffer.addSample(deviceMotion.gravity.z)
             
 //            print(
-//                String(deviceMotion.timestamp),           String(deviceMotion.userAcceleration.x),
+//                String(deviceMotion.timestamp),
+//                String(deviceMotion.userAcceleration.x),
 //                                 String(deviceMotion.userAcceleration.y),
 //                                 String(deviceMotion.userAcceleration.z),
 //                                 String(deviceMotion.rotationRate.x),
@@ -168,7 +174,7 @@ class MotionManager: NSObject {
 //                                 String(deviceMotion.gravity.x),
 //                                 String(deviceMotion.gravity.y),
 //                                 String(deviceMotion.gravity.z),
-//
+
 //                          separator: ",")
             
             
@@ -184,19 +190,7 @@ class MotionManager: NSObject {
                 
                 shotDetected = true
                 
-                rotationXBuffer.reset()
-                rotationYBuffer.reset()
-                rotationZBuffer.reset()
-                               
-                accelerationXBuffer.reset()
-                accelerationYBuffer.reset()
-                accelerationZBuffer.reset()
                 
-                gravityXBuffer.reset()
-                gravityYBuffer.reset()
-                gravityZBuffer.reset()
-                
-                rateAlongGravityBuffer.reset()
                 
                 if (modelPrediction != "none") {
                     
@@ -205,6 +199,7 @@ class MotionManager: NSObject {
                     if (modelPrediction == "forehand_spin") {
                         forehandSpinCount += 1
                         count = forehandSpinCount
+                        
                     } else if (modelPrediction == "forehand_slice") {
                         forehandSliceCount += 1
                         count = forehandSliceCount
@@ -229,10 +224,39 @@ class MotionManager: NSObject {
                     }
                     
                     recentDetection = true
+
+                    var speed = 0.0
                     
-                    delegate?.didUpdateShotCount(self, shotType: modelPrediction!, count: count)
+                    let rotationRateY = rotationYBuffer.maxWithoutSign().max * 57.3
+                    
+                    if (modelPrediction == "serve") {
+                        speed = (0.025 * abs(rotationRateY) + 20.06) * 3.6;
+                    } else {
+                        speed = (0.039 * abs(rotationRateY) + 3.94) * 3.6;
+                    }
+                    
+                    print("Calculated speed = \(speed)")
+                    
+                    
+//                    calculateShotSpeed(impactGravityY: rotationYBuffer.maxWithoutSign().max * 57.3 , impactGravityZ: rotationZBuffer.buffer[(rotationYBuffer.maxWithoutSign().position)] * 57.3, armLength: ModelConstants.armLength, tetaAngle1: ModelConstants.zeta1Angle, tetaAngle2: ModelConstants.zeta2Angle, racketLength: ModelConstants.racketLength)
+                    
+                    delegate?.didUpdateShotCount(self, shotType: modelPrediction!, count: count, speed: speed)
 
                 }
+                
+                rotationXBuffer.reset()
+                rotationYBuffer.reset()
+                rotationZBuffer.reset()
+                               
+                accelerationXBuffer.reset()
+                accelerationYBuffer.reset()
+                accelerationZBuffer.reset()
+                
+                gravityXBuffer.reset()
+                gravityYBuffer.reset()
+                gravityZBuffer.reset()
+                
+                rateAlongGravityBuffer.reset()
                 
             }
             
@@ -356,5 +380,32 @@ class MotionManager: NSObject {
         
 //        // Return the predicted activity - the activity with the highest probability
 //        return prediction.label
+    }
+    
+    func calculateShotSpeed(impactGravityY: Double, impactGravityZ: Double, armLength: Double, tetaAngle1: Double, tetaAngle2: Double, racketLength: Double) {
+        
+        print("Shot impactGravityY =  \(impactGravityY)")
+        
+        print("Shot impactGravityZ =  \(impactGravityZ)")
+        
+        let w = sqrt(pow(impactGravityY, 2.0) + pow(impactGravityZ, 2.0))
+        
+        print("Shot w =  \(w)")
+        
+        let effectiveArmLength = armLength / (2 * sqrt(2 *  (1 - cos(tetaAngle1))))
+        
+        print("Shot effectiveArmLength =  \(effectiveArmLength)")
+        
+        let alphaAngle = acos(effectiveArmLength/armLength)
+        
+        print("Shot alphaAngle =  \(alphaAngle)")
+        
+        let effectiveRotationRadius = sqrt(pow(racketLength, 2.0) + pow(effectiveArmLength, 2.0) - 2 * racketLength * effectiveArmLength * cos(tetaAngle2 - Double(alphaAngle)))
+        
+        print("Shot effectiveRotationRadius =  \(effectiveRotationRadius)")
+        
+        let speed = w * effectiveRotationRadius
+        
+        print("Shot speed =  \(speed * 3.6)")
     }
 }

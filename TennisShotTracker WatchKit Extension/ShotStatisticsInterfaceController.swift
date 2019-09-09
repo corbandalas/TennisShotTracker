@@ -12,10 +12,15 @@ import Foundation
 
 class ShotStatisticsInterfaceController: WKInterfaceController {
 
+    var workout: Workout? = nil
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        // Configure interface objects here.
+       if let workoutString = context as? String {
+        
+          workout = try! JSONDecoder().decode(Workout.self, from: workoutString.data(using: .utf8)!)
+        }
     }
 
     override func willActivate() {
@@ -26,6 +31,13 @@ class ShotStatisticsInterfaceController: WKInterfaceController {
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
+    }
+    
+    override init() {
+        super.init()
+        
+       
+      
     }
 
 }

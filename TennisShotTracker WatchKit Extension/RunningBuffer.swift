@@ -57,6 +57,21 @@ class RunningBuffer {
         }
         return max
     }
+    
+    func maxWithoutSign() -> (max: Double, position: Int) {
+        var max = 0.0
+        var pos = 0
+        
+        for i in 0..<buffer.count {
+            if (abs(buffer[i]) >= max) {
+                max = buffer[i]
+                pos = i
+            }
+        }
+        
+       
+        return (max, pos)
+    }
 
     func recentMean() -> Double {
         // Calculate the mean over the beginning half of the buffer.

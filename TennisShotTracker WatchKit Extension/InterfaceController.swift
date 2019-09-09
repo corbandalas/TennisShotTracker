@@ -32,10 +32,15 @@ class InterfaceController: WKInterfaceController,  HKWorkoutSessionDelegate, HKL
     var backhandVolleyCount = 0
     var single_handed_backhandCount = 0
     var serveCount = 0
+    var currentShotSpeed = 0.0
+ 
+    var shotSpeedArray = [Double]()
+    var serveSpeedArray = [Double]()
     
     var workoutState: HKWorkoutSessionState!
     var workoutDistance = 0.0
     var burnedCalories = 0.0
+    
     
     @IBOutlet weak var timer: WKInterfaceTimer!
     @IBOutlet weak var activeCaloriesLabel: WKInterfaceLabel!
@@ -45,6 +50,7 @@ class InterfaceController: WKInterfaceController,  HKWorkoutSessionDelegate, HKL
     @IBOutlet weak var forehandSpinCountLabel: WKInterfaceLabel!
     @IBOutlet weak var forehandSliceCountLabel: WKInterfaceLabel!
     @IBOutlet weak var forehandVolleyCountLabel: WKInterfaceLabel!
+    @IBOutlet weak var speedLabel: WKInterfaceLabel!
     
     @IBOutlet weak var workoutStartButton: WKInterfaceButton!
     
@@ -290,7 +296,9 @@ class InterfaceController: WKInterfaceController,  HKWorkoutSessionDelegate, HKL
         backhandVolleyCount = 0
         single_handed_backhandCount = 0
         serveCount = 0
-        
+        currentShotSpeed = 0.0
+        shotSpeedArray = [Double]()
+        serveSpeedArray = [Double]()
 //        workoutState = .running
         
 //        updateLabels()
@@ -432,10 +440,11 @@ class InterfaceController: WKInterfaceController,  HKWorkoutSessionDelegate, HKL
 //                backhandVolleyCountLabel.setText("\(backhandVolleyCount)")
                 backhandSingleHandedCountLabel.setText("\(single_handed_backhandCount)")
                 serveCountLabel.setText("\(serveCount)")
+                speedLabel.setText("\(currentShotSpeed)")
            }
     }
     
-    func didUpdateShotCount(_ manager: MotionManager, shotType: String, count: Int) {
+    func didUpdateShotCount(_ manager: MotionManager, shotType: String, count: Int, speed: Double) {
            /// Serialize the property access and UI updates on the main queue.
            DispatchQueue.main.async {
             
@@ -457,23 +466,54 @@ class InterfaceController: WKInterfaceController,  HKWorkoutSessionDelegate, HKL
                     self.single_handed_backhandCount = count
                 }
             
+                self.currentShotSpeed = speed
+                
+                
+            
+                if (shotType == "serve") {
+                    self.serveSpeedArray.append(speed)
+                } else {
+                    self.shotSpeedArray.append(speed)
+                }
+                    
                self.updateLabels()
            }
        }
     
     func saveWorkout() {
         
-        let workoutObject = Workout(date: builder.startDate!, workoutInterval: builder.elapsedTime, calBurned: burnedCalories, distance: workoutDistance, forehandSpinCount: forehandSpinCount, forehandSliceCount: forehandSliceCount, forehandVolleyCount: forehandVolleyCount, backhandSpinCount: backhandSpinCount, backhandSliceCount: backhandSliceCount, backhandVolleyCount: backhandVolleyCount, single_handed_backhandCount: single_handed_backhandCount, serveCount: serveCount, totalShots: forehandSpinCount + forehandSliceCount + forehandVolleyCount + backhandSpinCount + backhandSliceCount + backhandVolleyCount + single_handed_backhandCount)
+
+        
+     
+        print("serveSpeedArray = \(serveSpeedArray)")
+        print("shotSpeedArray = \(shotSpeedArray)")
+        
+    let workoutObject = Workout(date: builder.startDate!, workoutInterval: builder.elapsedTime, calBurned: burnedCalories, distance: workoutDistance, forehandSpinCount: forehandSpinCount, forehandSliceCount: forehandSliceCount, forehandVolleyCount: forehandVolleyCount, backhandSpinCount: backhandSpinCount, backhandSliceCount: backhandSliceCount, backhandVolleyCount: backhandVolleyCount, single_handed_backhandCount: single_handed_backhandCount, serveCount: serveCount, totalShots: forehandSpinCount + forehandSliceCount + forehandVolleyCount + backhandSpinCount + backhandSliceCount + backhandVolleyCount + single_handed_backhandCount,
+                                    maxServeSpeed: serveSpeedArray.max()!, maxShotSpeed: shotSpeedArray.max()!, minServeSpeed: serveSpeedArray.min()!, minShotSpeed: shotSpeedArray.min()!, averageShotSpeed: shotSpeedArray.reduce(0.0, +) / Double(shotSpeedArray.count), averageServeSpeed: serveSpeedArray.reduce(0.0, +) / Double(serveSpeedArray.count))
    
         let encodedData = try? JSONEncoder().encode(workoutObject)
         
         let defaults = UserDefaults.standard
-        var myarray = defaults.stringArray(forKey: "workoutResults") ?? [String]()
+    
+        
+        var myArray = defaults.stringArray(forKey: "workoutResults") ?? [String]()
              
-        myarray.append(encodedData!.description)
+        myArray.removeAll()
+        defaults.set(myArray, forKey: "workoutResults")
+
+        let result = String(data: encodedData!, encoding: .utf8)!
              
-        defaults.set(myarray, forKey: "workoutResults")
+        myArray.append(result)
+            
+        print("Saved data = \(result)")
+        
+       
+        
+        defaults.set(myArray, forKey: "workoutResults")
     }
    
-
+    @IBAction func showWorkoutListAction() {
+        presentController(withName: "resultsController", context: "none")
+    }
+    
 }

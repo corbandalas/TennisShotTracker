@@ -11,7 +11,7 @@
             <objects>
                 <controller identifier="interfaceController" spacing="13" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="TennisShotTracker_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <group width="1" height="109" alignment="left" id="tl1-3M-Lue">
+                        <group width="1" height="136" alignment="left" id="tl1-3M-Lue">
                             <items>
                                 <group width="96" alignment="left" layout="vertical" spacing="0.0" id="nW4-cK-g1z">
                                     <items>
@@ -129,6 +129,45 @@
                                                     </variation>
                                                 </label>
                                                 <label alignment="left" verticalAlignment="bottom" text="m" id="mlf-r9-dFf">
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="font" type="system" weight="medium" pointSize="14"/>
+                                                    <variation key="device=watch38mm">
+                                                        <fontDescription key="font" type="system" weight="medium" pointSize="14"/>
+                                                    </variation>
+                                                    <variation key="device=watch40mm">
+                                                        <fontDescription key="font" type="system" weight="medium" pointSize="14"/>
+                                                    </variation>
+                                                    <variation key="device=watch42mm">
+                                                        <fontDescription key="font" type="system" weight="medium" pointSize="14"/>
+                                                    </variation>
+                                                    <variation key="device=watch44mm">
+                                                        <fontDescription key="font" type="system" weight="medium" pointSize="14"/>
+                                                    </variation>
+                                                </label>
+                                            </items>
+                                        </group>
+                                        <group width="1" alignment="left" verticalAlignment="bottom" id="OBJ-db-09Z">
+                                            <items>
+                                                <imageView alignment="left" verticalAlignment="center" image="speedometer" catalog="system" id="UUa-0K-JkR">
+                                                    <color key="tintColor" red="0.7439739481852069" green="0.33440075200226593" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </imageView>
+                                                <label alignment="left" verticalAlignment="center" text="0" id="PPo-7k-PPQ">
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="font" type="system" weight="medium" pointSize="22"/>
+                                                    <variation key="device=watch38mm">
+                                                        <fontDescription key="font" type="system" weight="medium" pointSize="16"/>
+                                                    </variation>
+                                                    <variation key="device=watch40mm">
+                                                        <fontDescription key="font" type="system" weight="medium" pointSize="18"/>
+                                                    </variation>
+                                                    <variation key="device=watch42mm">
+                                                        <fontDescription key="font" type="system" weight="medium" pointSize="20"/>
+                                                    </variation>
+                                                    <variation key="device=watch44mm">
+                                                        <fontDescription key="font" type="system" weight="medium" pointSize="22"/>
+                                                    </variation>
+                                                </label>
+                                                <label alignment="left" verticalAlignment="bottom" text="km/h" id="uiX-FO-8mq">
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="font" type="system" weight="medium" pointSize="14"/>
                                                     <variation key="device=watch38mm">
@@ -308,7 +347,11 @@
                     </items>
                     <menu key="menu" id="qCD-v0-na3">
                         <items>
-                            <menuItem title="Workouts" image="table" catalog="system" id="xaX-bg-Vma"/>
+                            <menuItem title="Workouts" image="table" catalog="system" id="xaX-bg-Vma">
+                                <connections>
+                                    <action selector="showWorkoutListAction" destination="AgC-eL-Hgc" id="ot1-bh-TQt"/>
+                                </connections>
+                            </menuItem>
                         </items>
                     </menu>
                     <connections>
@@ -321,18 +364,66 @@
                         <outlet property="forehandSpinCountLabel" destination="YUT-Ku-xlC" id="7dS-qF-kLZ"/>
                         <outlet property="heartRateLabel" destination="9rY-1d-RAo" id="VYd-OM-HcH"/>
                         <outlet property="serveCountLabel" destination="jqv-jU-htZ" id="FCb-WR-gmx"/>
+                        <outlet property="speedLabel" destination="PPo-7k-PPQ" id="ZyJ-Id-WtF"/>
                         <outlet property="timer" destination="unj-eg-RwX" id="Z1V-F4-8OR"/>
                         <outlet property="workoutStartButton" destination="GPf-pD-asD" id="4vZ-Fm-fJB"/>
                         <outlet property="workoutStopButton" destination="DBj-hb-l1G" id="Bcc-kp-vhx"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="39" y="29"/>
+            <point key="canvasLocation" x="38.434782608695649" y="28.839285714285715"/>
+        </scene>
+        <!--resultsController-->
+        <scene sceneID="deI-o4-5tr">
+            <objects>
+                <controller identifier="resultsController" id="8YO-X3-yHM" customClass="ResultsRowInterfaceController" customModule="TennisShotTracker_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="dU3-uE-KFU">
+                            <items>
+                                <tableRow identifier="ResultsRowType" id="3WV-ru-afH" customClass="ResultsRowController" customModule="TennisShotTracker_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" id="iRM-q5-MFs">
+                                        <items>
+                                            <label alignment="left" text="Label" id="9O8-Kq-MoF">
+                                                <fontDescription key="font" type="system" pointSize="13"/>
+                                            </label>
+                                        </items>
+                                        <color key="backgroundColor" red="0.2727194129491341" green="0.48070965109385538" blue="0.77151473445595853" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="data" destination="9O8-Kq-MoF" id="kJi-Sk-cFj"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <menu key="menu" id="Wx4-vV-wpB">
+                        <items>
+                            <menuItem title="Clear workouts" icon="trash" id="plf-CN-wbV">
+                                <connections>
+                                    <action selector="clearWorkouts" destination="8YO-X3-yHM" id="ho2-Dh-yYQ"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="table" destination="dU3-uE-KFU" id="9fP-Ou-ZLH"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="37.695652173913039" y="283.83928571428572"/>
+        </scene>
+        <!--showWorkoutStat-->
+        <scene sceneID="NMe-C3-J5r">
+            <objects>
+                <controller identifier="showWorkoutStat" id="vbC-p1-sRd" customClass="ShotStatisticsInterfaceController" customModule="TennisShotTracker_WatchKit_Extension"/>
+            </objects>
+            <point key="canvasLocation" x="313" y="300"/>
         </scene>
     </scenes>
     <resources>
         <image name="flame.fill" catalog="system" width="52" height="64"/>
         <image name="heart.fill" catalog="system" width="64" height="56"/>
+        <image name="speedometer" catalog="system" width="64" height="62"/>
         <image name="table" catalog="system" width="64" height="46"/>
         <image name="tortoise.fill" catalog="system" width="64" height="32"/>
     </resources>

@@ -23,6 +23,13 @@ struct Workout: Codable {
     var single_handed_backhandCount: Int
     var serveCount: Int
     var totalShots: Int
+    var maxServeSpeed: Double
+    var maxShotSpeed: Double
+    var minServeSpeed: Double
+    var minShotSpeed: Double
+    var averageShotSpeed: Double
+    var averageServeSpeed: Double
+    
     
     
 }

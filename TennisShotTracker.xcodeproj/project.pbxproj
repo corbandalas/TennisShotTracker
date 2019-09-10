@@ -20,6 +20,7 @@
 		9ECCBAE22309D0380061805A /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ECCBAE12309D0380061805A /* HealthKit.framework */; };
 		A8200CEB23265F7600B82424 /* ResultsRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8200CEA23265F7600B82424 /* ResultsRowController.swift */; };
 		A8200CED2326622600B82424 /* ResultsRowInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8200CEC2326622600B82424 /* ResultsRowInterfaceController.swift */; };
+		A82EA00A2327D2870095007A /* Seedfile in Resources */ = {isa = PBXBuildFile; fileRef = A82EA0092327D2870095007A /* Seedfile */; };
 		A8503B9223238727002B19BE /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8503B9123238727002B19BE /* Workout.swift */; };
 		A85A68AC23214A6200EBFA33 /* ShotStatisticsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85A68AB23214A6200EBFA33 /* ShotStatisticsInterfaceController.swift */; };
 		A85A68AE2322325E00EBFA33 /* TennisShotActivityRightHandModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A85A68AD2322325E00EBFA33 /* TennisShotActivityRightHandModel.mlmodel */; };
@@ -85,6 +86,7 @@
 		9ECCBAE12309D0380061805A /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS6.0.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		A8200CEA23265F7600B82424 /* ResultsRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsRowController.swift; sourceTree = "<group>"; };
 		A8200CEC2326622600B82424 /* ResultsRowInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsRowInterfaceController.swift; sourceTree = "<group>"; };
+		A82EA0092327D2870095007A /* Seedfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Seedfile; sourceTree = "<group>"; };
 		A8503B9123238727002B19BE /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		A85A68AB23214A6200EBFA33 /* ShotStatisticsInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShotStatisticsInterfaceController.swift; sourceTree = "<group>"; };
 		A85A68AD2322325E00EBFA33 /* TennisShotActivityRightHandModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = TennisShotActivityRightHandModel.mlmodel; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 		9ECCBAA0230878BB0061805A = {
 			isa = PBXGroup;
 			children = (
+				A82EA0092327D2870095007A /* Seedfile */,
 				9ECCBAAF230878BB0061805A /* TennisShotTracker WatchKit App */,
 				9ECCBABE230878C00061805A /* TennisShotTracker WatchKit Extension */,
 				9ECCBAA8230878BB0061805A /* Products */,
@@ -260,6 +263,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A82EA00A2327D2870095007A /* Seedfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

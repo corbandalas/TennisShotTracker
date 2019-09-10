@@ -1,0 +1,4 @@
+# For both iOS and watchOS framework
+target :YOChartImageKit do
+  github 'yasuoza/YOChartImageKit', '1.1.0', files: 'Source/YOChartImageKit/*.{h,m}'
+end

@@ -11,4 +11,5 @@ import WatchKit
 class ResultsRowController: NSObject {
 
     @IBOutlet weak var data: WKInterfaceLabel!
+    @IBOutlet weak var interval: WKInterfaceLabel!
 }

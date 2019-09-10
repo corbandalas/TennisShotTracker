@@ -28,7 +28,10 @@ class ResultsRowInterfaceController: WKInterfaceController {
             
             let workout: Workout = try! JSONDecoder().decode(Workout.self, from: item.data(using: .utf8)!)
         
-            row.data.setText(workout.date.description)
+            row.data.setText(getFormattedDate(date: workout.date))
+            
+            row.interval.setText(formatTimeInterval(duration: workout.workoutInterval))
+            
             
             index = index + 1
         }
@@ -71,4 +74,22 @@ class ResultsRowInterfaceController: WKInterfaceController {
         
         presentController(withName: "showWorkoutStat", context: workoutString)
     }
+    
+    func getFormattedDate(date: Date) -> String {
+        let formatter = DateFormatter()
+        
+        formatter.dateFormat = "dd-MM-yyyy hh:mm"
+        
+        return formatter.string(from: date)
+    }
+    
+     func formatTimeInterval(duration: TimeInterval) -> String {
+           let formatter = DateComponentsFormatter()
+           formatter.allowedUnits = [.day, .hour, .minute, .second]
+     
+           formatter.unitsStyle = .abbreviated
+           formatter.zeroFormattingBehavior = .pad
+
+           return formatter.string(from: duration)!
+       }
 }

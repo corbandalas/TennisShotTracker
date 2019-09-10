@@ -440,7 +440,7 @@ class InterfaceController: WKInterfaceController,  HKWorkoutSessionDelegate, HKL
 //                backhandVolleyCountLabel.setText("\(backhandVolleyCount)")
                 backhandSingleHandedCountLabel.setText("\(single_handed_backhandCount)")
                 serveCountLabel.setText("\(serveCount)")
-                speedLabel.setText("\(currentShotSpeed)")
+                speedLabel.setText("\(roundf(Float(currentShotSpeed * 100) / 100))")
            }
     }
     
@@ -482,14 +482,29 @@ class InterfaceController: WKInterfaceController,  HKWorkoutSessionDelegate, HKL
     
     func saveWorkout() {
         
-
+        var shotSpeedMax = 0.0
+        var serveSpeedMax = 0.0
+        var serveSpeedMin = 0.0
+        var shotSpeedMin = 0.0
+        var shotSpeedAverage = 0.0
+        var serveSpeedAverage = 0.0
         
-     
-        print("serveSpeedArray = \(serveSpeedArray)")
-        print("shotSpeedArray = \(shotSpeedArray)")
+        if !serveSpeedArray.isEmpty {
+            serveSpeedMax = serveSpeedArray.max()!
+            serveSpeedMin = serveSpeedArray.min()!
+            serveSpeedAverage = serveSpeedArray.reduce(0.0, +) / Double(serveSpeedArray.count)
+            
+        }
+        
+        if !shotSpeedArray.isEmpty {
+            shotSpeedMax = shotSpeedArray.max()!
+            shotSpeedMin = shotSpeedArray.min()!
+            shotSpeedAverage = shotSpeedArray.reduce(0.0, +) / Double(shotSpeedArray.count)
+        }
+        
         
     let workoutObject = Workout(date: builder.startDate!, workoutInterval: builder.elapsedTime, calBurned: burnedCalories, distance: workoutDistance, forehandSpinCount: forehandSpinCount, forehandSliceCount: forehandSliceCount, forehandVolleyCount: forehandVolleyCount, backhandSpinCount: backhandSpinCount, backhandSliceCount: backhandSliceCount, backhandVolleyCount: backhandVolleyCount, single_handed_backhandCount: single_handed_backhandCount, serveCount: serveCount, totalShots: forehandSpinCount + forehandSliceCount + forehandVolleyCount + backhandSpinCount + backhandSliceCount + backhandVolleyCount + single_handed_backhandCount,
-                                    maxServeSpeed: serveSpeedArray.max()!, maxShotSpeed: shotSpeedArray.max()!, minServeSpeed: serveSpeedArray.min()!, minShotSpeed: shotSpeedArray.min()!, averageShotSpeed: shotSpeedArray.reduce(0.0, +) / Double(shotSpeedArray.count), averageServeSpeed: serveSpeedArray.reduce(0.0, +) / Double(serveSpeedArray.count))
+                                    maxServeSpeed: serveSpeedMax, maxShotSpeed: shotSpeedMax, minServeSpeed: serveSpeedMin, minShotSpeed: shotSpeedMin, averageShotSpeed: shotSpeedAverage, averageServeSpeed: serveSpeedAverage)
    
         let encodedData = try? JSONEncoder().encode(workoutObject)
         
@@ -498,8 +513,8 @@ class InterfaceController: WKInterfaceController,  HKWorkoutSessionDelegate, HKL
         
         var myArray = defaults.stringArray(forKey: "workoutResults") ?? [String]()
              
-        myArray.removeAll()
-        defaults.set(myArray, forKey: "workoutResults")
+//        myArray.removeAll()
+//        defaults.set(myArray, forKey: "workoutResults")
 
         let result = String(data: encodedData!, encoding: .utf8)!
              
@@ -508,7 +523,6 @@ class InterfaceController: WKInterfaceController,  HKWorkoutSessionDelegate, HKL
         print("Saved data = \(result)")
         
        
-        
         defaults.set(myArray, forKey: "workoutResults")
     }
    

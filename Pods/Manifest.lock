@@ -1,0 +1,16 @@
+PODS:
+  - YOChartImageKit (1.2.1)
+
+DEPENDENCIES:
+  - YOChartImageKit (~> 1.1)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - YOChartImageKit
+
+SPEC CHECKSUMS:
+  YOChartImageKit: bd73e66857c848325bef87edc40595d72a6b5fbe
+
+PODFILE CHECKSUM: e84d40768562184399692a61ea738d84624eda00
+
+COCOAPODS: 1.7.5

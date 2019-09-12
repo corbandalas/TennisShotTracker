@@ -32,6 +32,8 @@ class ResultsRowInterfaceController: WKInterfaceController {
             
             row.interval.setText(formatTimeInterval(duration: workout.workoutInterval))
             
+            row.distance.setText("\(workout.totalShots) shots")
+            
             
             index = index + 1
         }
@@ -78,14 +80,14 @@ class ResultsRowInterfaceController: WKInterfaceController {
     func getFormattedDate(date: Date) -> String {
         let formatter = DateFormatter()
         
-        formatter.dateFormat = "dd-MM-yyyy hh:mm"
+        formatter.dateFormat = "hh:mm dd-MM-yyyy"
         
         return formatter.string(from: date)
     }
     
      func formatTimeInterval(duration: TimeInterval) -> String {
            let formatter = DateComponentsFormatter()
-           formatter.allowedUnits = [.day, .hour, .minute, .second]
+           formatter.allowedUnits = [.hour, .minute, .second]
      
            formatter.unitsStyle = .abbreviated
            formatter.zeroFormattingBehavior = .pad

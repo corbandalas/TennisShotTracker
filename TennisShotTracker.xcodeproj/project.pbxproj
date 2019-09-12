@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		69C5D1F6247C67E075313BFE /* Pods_TennisShotTracker_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0633EE7EFE9CB6D2B9B5C62A /* Pods_TennisShotTracker_WatchKit_App.framework */; };
+		7CDD783D7976DB3E088969DF /* Pods_TennisShotTracker_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD6700A26E7A298D5A162C3A /* Pods_TennisShotTracker_WatchKit_Extension.framework */; };
 		9ECCBAAC230878BB0061805A /* TennisShotTracker WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 9ECCBAAB230878BB0061805A /* TennisShotTracker WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9ECCBAB2230878BB0061805A /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9ECCBAB0230878BB0061805A /* Interface.storyboard */; };
 		9ECCBAB4230878C00061805A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9ECCBAB3230878C00061805A /* Assets.xcassets */; };
@@ -20,10 +22,10 @@
 		9ECCBAE22309D0380061805A /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ECCBAE12309D0380061805A /* HealthKit.framework */; };
 		A8200CEB23265F7600B82424 /* ResultsRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8200CEA23265F7600B82424 /* ResultsRowController.swift */; };
 		A8200CED2326622600B82424 /* ResultsRowInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8200CEC2326622600B82424 /* ResultsRowInterfaceController.swift */; };
-		A82EA00A2327D2870095007A /* Seedfile in Resources */ = {isa = PBXBuildFile; fileRef = A82EA0092327D2870095007A /* Seedfile */; };
 		A8503B9223238727002B19BE /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8503B9123238727002B19BE /* Workout.swift */; };
 		A85A68AC23214A6200EBFA33 /* ShotStatisticsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85A68AB23214A6200EBFA33 /* ShotStatisticsInterfaceController.swift */; };
 		A85A68AE2322325E00EBFA33 /* TennisShotActivityRightHandModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A85A68AD2322325E00EBFA33 /* TennisShotActivityRightHandModel.mlmodel */; };
+		CF745EF92B1D65491B0A89E4 /* Pods_TennisShotTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA38F147DD09AD785CCAF1C8 /* Pods_TennisShotTracker.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0633EE7EFE9CB6D2B9B5C62A /* Pods_TennisShotTracker_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TennisShotTracker_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C48E48B339E0DB6F856F4C3 /* Pods-TennisShotTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisShotTracker.release.xcconfig"; path = "Target Support Files/Pods-TennisShotTracker/Pods-TennisShotTracker.release.xcconfig"; sourceTree = "<group>"; };
+		25361DEF581E4A99C7EEEE3A /* Pods-TennisShotTracker WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisShotTracker WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-TennisShotTracker WatchKit App/Pods-TennisShotTracker WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
+		4AF4F6ED90C2B773493AC49F /* Pods-TennisShotTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisShotTracker.debug.xcconfig"; path = "Target Support Files/Pods-TennisShotTracker/Pods-TennisShotTracker.debug.xcconfig"; sourceTree = "<group>"; };
+		7F4D45F5BF3E371F7BF73E1F /* Pods-TennisShotTracker WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisShotTracker WatchKit Extension.release.xcconfig"; path = "Target Support Files/Pods-TennisShotTracker WatchKit Extension/Pods-TennisShotTracker WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
 		9ECCBAA7230878BB0061805A /* TennisShotTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TennisShotTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ECCBAAB230878BB0061805A /* TennisShotTracker WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TennisShotTracker WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ECCBAB1230878BB0061805A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -86,32 +93,66 @@
 		9ECCBAE12309D0380061805A /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS6.0.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		A8200CEA23265F7600B82424 /* ResultsRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsRowController.swift; sourceTree = "<group>"; };
 		A8200CEC2326622600B82424 /* ResultsRowInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsRowInterfaceController.swift; sourceTree = "<group>"; };
-		A82EA0092327D2870095007A /* Seedfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Seedfile; sourceTree = "<group>"; };
 		A8503B9123238727002B19BE /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		A85A68AB23214A6200EBFA33 /* ShotStatisticsInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShotStatisticsInterfaceController.swift; sourceTree = "<group>"; };
 		A85A68AD2322325E00EBFA33 /* TennisShotActivityRightHandModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = TennisShotActivityRightHandModel.mlmodel; sourceTree = "<group>"; };
+		BA38F147DD09AD785CCAF1C8 /* Pods_TennisShotTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TennisShotTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD6700A26E7A298D5A162C3A /* Pods_TennisShotTracker_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TennisShotTracker_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2CD372C5307E310C75D5D14 /* Pods-TennisShotTracker WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisShotTracker WatchKit Extension.debug.xcconfig"; path = "Target Support Files/Pods-TennisShotTracker WatchKit Extension/Pods-TennisShotTracker WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		FDCD01BC3FCC56474A62647D /* Pods-TennisShotTracker WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisShotTracker WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-TennisShotTracker WatchKit App/Pods-TennisShotTracker WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		243215341BE6908E84430982 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF745EF92B1D65491B0A89E4 /* Pods_TennisShotTracker.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9ECCBAB7230878C00061805A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				9ECCBAE22309D0380061805A /* HealthKit.framework in Frameworks */,
+				7CDD783D7976DB3E088969DF /* Pods_TennisShotTracker_WatchKit_Extension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C880ECE1F6E3CE56014708BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69C5D1F6247C67E075313BFE /* Pods_TennisShotTracker_WatchKit_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		65061C6835B5B1F954827D11 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4AF4F6ED90C2B773493AC49F /* Pods-TennisShotTracker.debug.xcconfig */,
+				0C48E48B339E0DB6F856F4C3 /* Pods-TennisShotTracker.release.xcconfig */,
+				FDCD01BC3FCC56474A62647D /* Pods-TennisShotTracker WatchKit App.debug.xcconfig */,
+				25361DEF581E4A99C7EEEE3A /* Pods-TennisShotTracker WatchKit App.release.xcconfig */,
+				F2CD372C5307E310C75D5D14 /* Pods-TennisShotTracker WatchKit Extension.debug.xcconfig */,
+				7F4D45F5BF3E371F7BF73E1F /* Pods-TennisShotTracker WatchKit Extension.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		9ECCBAA0230878BB0061805A = {
 			isa = PBXGroup;
 			children = (
-				A82EA0092327D2870095007A /* Seedfile */,
 				9ECCBAAF230878BB0061805A /* TennisShotTracker WatchKit App */,
 				9ECCBABE230878C00061805A /* TennisShotTracker WatchKit Extension */,
 				9ECCBAA8230878BB0061805A /* Products */,
 				9ECCBAE02309D0380061805A /* Frameworks */,
+				65061C6835B5B1F954827D11 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -159,6 +200,9 @@
 			isa = PBXGroup;
 			children = (
 				9ECCBAE12309D0380061805A /* HealthKit.framework */,
+				BA38F147DD09AD785CCAF1C8 /* Pods_TennisShotTracker.framework */,
+				0633EE7EFE9CB6D2B9B5C62A /* Pods_TennisShotTracker_WatchKit_App.framework */,
+				CD6700A26E7A298D5A162C3A /* Pods_TennisShotTracker_WatchKit_Extension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -170,8 +214,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9ECCBAD2230878C20061805A /* Build configuration list for PBXNativeTarget "TennisShotTracker" */;
 			buildPhases = (
+				CFF8FCEEFD7D73446399F647 /* [CP] Check Pods Manifest.lock */,
 				9ECCBAA5230878BB0061805A /* Resources */,
 				9ECCBAD1230878C20061805A /* Embed Watch Content */,
+				243215341BE6908E84430982 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -187,8 +233,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9ECCBACE230878C20061805A /* Build configuration list for PBXNativeTarget "TennisShotTracker WatchKit App" */;
 			buildPhases = (
+				502F7FFBF1D6F798FA1284AE /* [CP] Check Pods Manifest.lock */,
 				9ECCBAA9230878BB0061805A /* Resources */,
 				9ECCBACD230878C20061805A /* Embed App Extensions */,
+				C880ECE1F6E3CE56014708BF /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -204,9 +252,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9ECCBACA230878C20061805A /* Build configuration list for PBXNativeTarget "TennisShotTracker WatchKit Extension" */;
 			buildPhases = (
+				0BB5F9B56137A4A7B51CAE9F /* [CP] Check Pods Manifest.lock */,
 				9ECCBAB6230878C00061805A /* Sources */,
 				9ECCBAB7230878C00061805A /* Frameworks */,
 				9ECCBAB8230878C00061805A /* Resources */,
+				E96B3B77B81840621808049D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -263,7 +313,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A82EA00A2327D2870095007A /* Seedfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +334,92 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0BB5F9B56137A4A7B51CAE9F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TennisShotTracker WatchKit Extension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		502F7FFBF1D6F798FA1284AE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TennisShotTracker WatchKit App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CFF8FCEEFD7D73446399F647 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TennisShotTracker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E96B3B77B81840621808049D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TennisShotTracker WatchKit Extension/Pods-TennisShotTracker WatchKit Extension-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TennisShotTracker WatchKit Extension/Pods-TennisShotTracker WatchKit Extension-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TennisShotTracker WatchKit Extension/Pods-TennisShotTracker WatchKit Extension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9ECCBAB6230878C00061805A /* Sources */ = {
@@ -445,6 +580,7 @@
 		};
 		9ECCBACB230878C20061805A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2CD372C5307E310C75D5D14 /* Pods-TennisShotTracker WatchKit Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_ENTITLEMENTS = "TennisShotTracker WatchKit Extension/TennisShotTracker WatchKit Extension.entitlements";
@@ -468,6 +604,7 @@
 		};
 		9ECCBACC230878C20061805A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F4D45F5BF3E371F7BF73E1F /* Pods-TennisShotTracker WatchKit Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_ENTITLEMENTS = "TennisShotTracker WatchKit Extension/TennisShotTracker WatchKit Extension.entitlements";
@@ -491,6 +628,7 @@
 		};
 		9ECCBACF230878C20061805A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDCD01BC3FCC56474A62647D /* Pods-TennisShotTracker WatchKit App.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -510,6 +648,7 @@
 		};
 		9ECCBAD0230878C20061805A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25361DEF581E4A99C7EEEE3A /* Pods-TennisShotTracker WatchKit App.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -529,6 +668,7 @@
 		};
 		9ECCBAD3230878C20061805A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4AF4F6ED90C2B773493AC49F /* Pods-TennisShotTracker.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -542,6 +682,7 @@
 		};
 		9ECCBAD4230878C20061805A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C48E48B339E0DB6F856F4C3 /* Pods-TennisShotTracker.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

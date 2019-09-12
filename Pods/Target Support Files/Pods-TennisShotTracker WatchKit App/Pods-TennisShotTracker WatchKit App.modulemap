@@ -1,0 +1,6 @@
+framework module Pods_TennisShotTracker_WatchKit_App {
+  umbrella header "Pods-TennisShotTracker WatchKit App-umbrella.h"
+
+  export *
+  module * { export * }
+}

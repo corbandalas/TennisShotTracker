@@ -1,0 +1,977 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0A12FA0C6B352963A87AA599CF91E744 /* Pods-TennisShotTracker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 003AFDC9C2482B964C13978E8111BB50 /* Pods-TennisShotTracker-dummy.m */; };
+		1C208B851226CE037D9BBA1AB5747172 /* YOChartImageKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4215ACA42CEA41248B969D2A8CFDED /* YOChartImageKit-dummy.m */; };
+		230E62D68D4F8ADF650597D0A7F7A738 /* YOBarChartImage.h in Headers */ = {isa = PBXBuildFile; fileRef = F498AC84B7EBE7580AF36F4D16D7720C /* YOBarChartImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		231BB3EC7DCF3BA44838B6F6609F3FE0 /* Pods-TennisShotTracker WatchKit App-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F5C54D74A15BD6490F834A82352AFAEF /* Pods-TennisShotTracker WatchKit App-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2EA7368A23DBAB817BBECE811200CB01 /* Pods-TennisShotTracker WatchKit App-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 669565FFC018F365C0260F7DFF28052A /* Pods-TennisShotTracker WatchKit App-dummy.m */; };
+		2F98C9DA6018E432D210F35F2B0BB7F3 /* YOLineChartImage.m in Sources */ = {isa = PBXBuildFile; fileRef = BB42572458E9EFEF07E957DA9B95455C /* YOLineChartImage.m */; };
+		41138EA80739AB527A89AD61DCA2615C /* Pods-TennisShotTracker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A07971F26751F3CF3A65BA2E14231BA8 /* Pods-TennisShotTracker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		452B4E3E459896A7AD6DAD9D66434E6B /* Pods-TennisShotTracker WatchKit Extension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 23145548CDB89173EFF24E0506DE415C /* Pods-TennisShotTracker WatchKit Extension-dummy.m */; };
+		4E9C6710E56504E3DE224C9D1BAF1217 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 356D081351CFBD0475E5983D730E32DF /* Foundation.framework */; };
+		561CA53FB4CA8F5CC8D9F74C7B2659B4 /* YOBarChartImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E8E4BCDD9B92B9DDA871F05C85A83D2 /* YOBarChartImage.m */; };
+		746E2649D89CDF92C1AB46D1C291D723 /* YODonutChartImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B235051759A03203C0294D6AD528CA8 /* YODonutChartImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75A901313CA74E9392EF1489CD7D1BF7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 356D081351CFBD0475E5983D730E32DF /* Foundation.framework */; };
+		894A176B3983771E1837B6577AC25ABF /* Pods-TennisShotTracker WatchKit Extension-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 59847EC34352173F94CE711A0296C4B3 /* Pods-TennisShotTracker WatchKit Extension-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		93071CA07A9B8F2F3425AEE5658D4242 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 356D081351CFBD0475E5983D730E32DF /* Foundation.framework */; };
+		9A00A13371014A448B1474F368A730EC /* YODonutChartImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F313D8B1C4DCF799A9D4FCD21756EA /* YODonutChartImage.m */; };
+		C41676B788951FDD79AC633E0EF718D6 /* YOChartImageKit.h in Headers */ = {isa = PBXBuildFile; fileRef = D752AE324B09E9881A66BF19BA3D805E /* YOChartImageKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D8FCDAC0A446E44A61477EBB3C45F40C /* YOChartImageKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C955BDFA64E820F5D49237B9EB68702C /* YOChartImageKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DBD9EE936BF92A9F54D112F103516155 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02D38AE3804295616A1FF61657BA1DB2 /* Foundation.framework */; };
+		E4ED2C501235D2FFA6DFD0360A22AC34 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE257882FC043E265CF9C48330638AAC /* UIKit.framework */; };
+		FF9F7A02348F5D33087E72CACD5ACD83 /* YOLineChartImage.h in Headers */ = {isa = PBXBuildFile; fileRef = D822015CB36D2338D9628F15A002D6AF /* YOLineChartImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4C0AB735E85BD8422D482D2CFE85FBEE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7124CA1709F89369848C20E79ED72EA7;
+			remoteInfo = YOChartImageKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		003AFDC9C2482B964C13978E8111BB50 /* Pods-TennisShotTracker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TennisShotTracker-dummy.m"; sourceTree = "<group>"; };
+		0056A103E0873A883FB23F3AC612D9DC /* Pods-TennisShotTracker WatchKit Extension-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TennisShotTracker WatchKit Extension-acknowledgements.markdown"; sourceTree = "<group>"; };
+		02D38AE3804295616A1FF61657BA1DB2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		0575E80E1BC7CA592D57F378477F0CDD /* Pods-TennisShotTracker-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TennisShotTracker-Info.plist"; sourceTree = "<group>"; };
+		058A69F54F41CE431629E977325D5DCF /* Pods-TennisShotTracker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TennisShotTracker.modulemap"; sourceTree = "<group>"; };
+		0919EB60811620C36068FE939EB2CBDD /* Pods-TennisShotTracker WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TennisShotTracker WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
+		0FDB8ED3CD4398060CE4AE77FE9F8626 /* YOChartImageKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "YOChartImageKit-Info.plist"; sourceTree = "<group>"; };
+		23145548CDB89173EFF24E0506DE415C /* Pods-TennisShotTracker WatchKit Extension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TennisShotTracker WatchKit Extension-dummy.m"; sourceTree = "<group>"; };
+		2766B0D07B3AC7B3F79B0B3B1B54288F /* Pods-TennisShotTracker WatchKit App-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TennisShotTracker WatchKit App-acknowledgements.markdown"; sourceTree = "<group>"; };
+		356D081351CFBD0475E5983D730E32DF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS5.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		42F6BDB71AF9F8CD286CE05B8B130BF2 /* Pods-TennisShotTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TennisShotTracker.release.xcconfig"; sourceTree = "<group>"; };
+		4C844FE4DE05B565B3F03B18902644CA /* Pods-TennisShotTracker-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TennisShotTracker-acknowledgements.plist"; sourceTree = "<group>"; };
+		54CA78C26D0D902610908455EF1FF114 /* Pods-TennisShotTracker WatchKit Extension-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TennisShotTracker WatchKit Extension-frameworks.sh"; sourceTree = "<group>"; };
+		54F313D8B1C4DCF799A9D4FCD21756EA /* YODonutChartImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YODonutChartImage.m; path = Source/YOChartImageKit/YODonutChartImage.m; sourceTree = "<group>"; };
+		59847EC34352173F94CE711A0296C4B3 /* Pods-TennisShotTracker WatchKit Extension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TennisShotTracker WatchKit Extension-umbrella.h"; sourceTree = "<group>"; };
+		669565FFC018F365C0260F7DFF28052A /* Pods-TennisShotTracker WatchKit App-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TennisShotTracker WatchKit App-dummy.m"; sourceTree = "<group>"; };
+		72198AC0EBA602AFFC07FAF04246ADDD /* Pods-TennisShotTracker WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TennisShotTracker WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
+		79FA29BFF7933828736E9529AEA6269B /* YOChartImageKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = YOChartImageKit.framework; path = YOChartImageKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		883A1393729204142D2C40A41AF2D025 /* YOChartImageKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YOChartImageKit-prefix.pch"; sourceTree = "<group>"; };
+		97C0432AB6D53F0110BCF205EC83141E /* Pods_TennisShotTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TennisShotTracker.framework; path = "Pods-TennisShotTracker.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B235051759A03203C0294D6AD528CA8 /* YODonutChartImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YODonutChartImage.h; path = Source/YOChartImageKit/YODonutChartImage.h; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9E8E4BCDD9B92B9DDA871F05C85A83D2 /* YOBarChartImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YOBarChartImage.m; path = Source/YOChartImageKit/YOBarChartImage.m; sourceTree = "<group>"; };
+		A07971F26751F3CF3A65BA2E14231BA8 /* Pods-TennisShotTracker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TennisShotTracker-umbrella.h"; sourceTree = "<group>"; };
+		ADE4B0810DBEE4D990DBA8D8A445CF40 /* Pods-TennisShotTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TennisShotTracker.debug.xcconfig"; sourceTree = "<group>"; };
+		AF4215ACA42CEA41248B969D2A8CFDED /* YOChartImageKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "YOChartImageKit-dummy.m"; sourceTree = "<group>"; };
+		B8532CF71B8402C89A29CE997314CE97 /* YOChartImageKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = YOChartImageKit.xcconfig; sourceTree = "<group>"; };
+		BB42572458E9EFEF07E957DA9B95455C /* YOLineChartImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YOLineChartImage.m; path = Source/YOChartImageKit/YOLineChartImage.m; sourceTree = "<group>"; };
+		BF3D8F63DA923AD3D38B4E590B09F1CA /* Pods-TennisShotTracker WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TennisShotTracker WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
+		BFDC7F32DF7486086EAC247F263E4201 /* Pods_TennisShotTracker_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TennisShotTracker_WatchKit_App.framework; path = "Pods-TennisShotTracker WatchKit App.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0163CCFF24EB3208E2339FAC7B4B9EC /* Pods-TennisShotTracker WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TennisShotTracker WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		C5AAF6E13FFF4E370E8A35680F420C47 /* YOChartImageKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = YOChartImageKit.modulemap; sourceTree = "<group>"; };
+		C787A3AD6C1FC63FD550E2A5408D255A /* Pods-TennisShotTracker WatchKit Extension-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TennisShotTracker WatchKit Extension-Info.plist"; sourceTree = "<group>"; };
+		C955BDFA64E820F5D49237B9EB68702C /* YOChartImageKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YOChartImageKit-umbrella.h"; sourceTree = "<group>"; };
+		C9B7568E4B9228A6B01920806D9EC5C0 /* Pods-TennisShotTracker-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TennisShotTracker-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D752AE324B09E9881A66BF19BA3D805E /* YOChartImageKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YOChartImageKit.h; path = Source/YOChartImageKit/YOChartImageKit.h; sourceTree = "<group>"; };
+		D822015CB36D2338D9628F15A002D6AF /* YOLineChartImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YOLineChartImage.h; path = Source/YOChartImageKit/YOLineChartImage.h; sourceTree = "<group>"; };
+		DE257882FC043E265CF9C48330638AAC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS5.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		E14A80444AEE2C4C06640C565BAEE439 /* Pods-TennisShotTracker WatchKit Extension-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TennisShotTracker WatchKit Extension-acknowledgements.plist"; sourceTree = "<group>"; };
+		E37B9A251BE4989F6CB7FD55E9492987 /* Pods-TennisShotTracker WatchKit App-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TennisShotTracker WatchKit App-Info.plist"; sourceTree = "<group>"; };
+		E7C2E71C247C7BFF3017ADD1C358E9F5 /* Pods-TennisShotTracker WatchKit Extension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TennisShotTracker WatchKit Extension.modulemap"; sourceTree = "<group>"; };
+		EC714304B9B543D9B08C06A216065DFB /* Pods_TennisShotTracker_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TennisShotTracker_WatchKit_Extension.framework; path = "Pods-TennisShotTracker WatchKit Extension.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F498AC84B7EBE7580AF36F4D16D7720C /* YOBarChartImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YOBarChartImage.h; path = Source/YOChartImageKit/YOBarChartImage.h; sourceTree = "<group>"; };
+		F5C54D74A15BD6490F834A82352AFAEF /* Pods-TennisShotTracker WatchKit App-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TennisShotTracker WatchKit App-umbrella.h"; sourceTree = "<group>"; };
+		F78A15C8815A0A43525FD6AFAFAF677E /* Pods-TennisShotTracker WatchKit App-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TennisShotTracker WatchKit App-acknowledgements.plist"; sourceTree = "<group>"; };
+		FD360C7FDB21178DB7D1B3723BA6FA7D /* Pods-TennisShotTracker WatchKit App.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TennisShotTracker WatchKit App.modulemap"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		22765EC0C4C9DC3DB3C717EA5CF1A26A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93071CA07A9B8F2F3425AEE5658D4242 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3104D4A5AF886F987387FC822C31C80D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75A901313CA74E9392EF1489CD7D1BF7 /* Foundation.framework in Frameworks */,
+				E4ED2C501235D2FFA6DFD0360A22AC34 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7703A59744D43B38E8B75F17FBAEEBB6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBD9EE936BF92A9F54D112F103516155 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFDD9811808AEE58D1EBC26C96B2D56C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E9C6710E56504E3DE224C9D1BAF1217 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		11D9AE111084918F3B1B8E840138598A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3AF64318EFE59853295D34CC67C676DD /* iOS */,
+				ACEFC3AAD274AD90974D496DF07C98CD /* watchOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		19EA44E30A7B37E377D20D3FE224F2D3 /* Pods-TennisShotTracker WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E7C2E71C247C7BFF3017ADD1C358E9F5 /* Pods-TennisShotTracker WatchKit Extension.modulemap */,
+				0056A103E0873A883FB23F3AC612D9DC /* Pods-TennisShotTracker WatchKit Extension-acknowledgements.markdown */,
+				E14A80444AEE2C4C06640C565BAEE439 /* Pods-TennisShotTracker WatchKit Extension-acknowledgements.plist */,
+				23145548CDB89173EFF24E0506DE415C /* Pods-TennisShotTracker WatchKit Extension-dummy.m */,
+				54CA78C26D0D902610908455EF1FF114 /* Pods-TennisShotTracker WatchKit Extension-frameworks.sh */,
+				C787A3AD6C1FC63FD550E2A5408D255A /* Pods-TennisShotTracker WatchKit Extension-Info.plist */,
+				59847EC34352173F94CE711A0296C4B3 /* Pods-TennisShotTracker WatchKit Extension-umbrella.h */,
+				C0163CCFF24EB3208E2339FAC7B4B9EC /* Pods-TennisShotTracker WatchKit Extension.debug.xcconfig */,
+				0919EB60811620C36068FE939EB2CBDD /* Pods-TennisShotTracker WatchKit Extension.release.xcconfig */,
+			);
+			name = "Pods-TennisShotTracker WatchKit Extension";
+			path = "Target Support Files/Pods-TennisShotTracker WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		3AF64318EFE59853295D34CC67C676DD /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				02D38AE3804295616A1FF61657BA1DB2 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		52C6272E191B63964C904D9856A3D76A /* Pods-TennisShotTracker */ = {
+			isa = PBXGroup;
+			children = (
+				058A69F54F41CE431629E977325D5DCF /* Pods-TennisShotTracker.modulemap */,
+				C9B7568E4B9228A6B01920806D9EC5C0 /* Pods-TennisShotTracker-acknowledgements.markdown */,
+				4C844FE4DE05B565B3F03B18902644CA /* Pods-TennisShotTracker-acknowledgements.plist */,
+				003AFDC9C2482B964C13978E8111BB50 /* Pods-TennisShotTracker-dummy.m */,
+				0575E80E1BC7CA592D57F378477F0CDD /* Pods-TennisShotTracker-Info.plist */,
+				A07971F26751F3CF3A65BA2E14231BA8 /* Pods-TennisShotTracker-umbrella.h */,
+				ADE4B0810DBEE4D990DBA8D8A445CF40 /* Pods-TennisShotTracker.debug.xcconfig */,
+				42F6BDB71AF9F8CD286CE05B8B130BF2 /* Pods-TennisShotTracker.release.xcconfig */,
+			);
+			name = "Pods-TennisShotTracker";
+			path = "Target Support Files/Pods-TennisShotTracker";
+			sourceTree = "<group>";
+		};
+		6C991CB49EA6BFD830D0ABF94567F40E /* YOChartImageKit */ = {
+			isa = PBXGroup;
+			children = (
+				F498AC84B7EBE7580AF36F4D16D7720C /* YOBarChartImage.h */,
+				9E8E4BCDD9B92B9DDA871F05C85A83D2 /* YOBarChartImage.m */,
+				D752AE324B09E9881A66BF19BA3D805E /* YOChartImageKit.h */,
+				9B235051759A03203C0294D6AD528CA8 /* YODonutChartImage.h */,
+				54F313D8B1C4DCF799A9D4FCD21756EA /* YODonutChartImage.m */,
+				D822015CB36D2338D9628F15A002D6AF /* YOLineChartImage.h */,
+				BB42572458E9EFEF07E957DA9B95455C /* YOLineChartImage.m */,
+				EDF389E7167D99CF14C405A2F8E6A128 /* Support Files */,
+			);
+			name = YOChartImageKit;
+			path = YOChartImageKit;
+			sourceTree = "<group>";
+		};
+		71566947CD5C99A39A4A0263D344E4A5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6C991CB49EA6BFD830D0ABF94567F40E /* YOChartImageKit */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		79E347CD7F89D20C14A2297517279C4C /* Pods-TennisShotTracker WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				FD360C7FDB21178DB7D1B3723BA6FA7D /* Pods-TennisShotTracker WatchKit App.modulemap */,
+				2766B0D07B3AC7B3F79B0B3B1B54288F /* Pods-TennisShotTracker WatchKit App-acknowledgements.markdown */,
+				F78A15C8815A0A43525FD6AFAFAF677E /* Pods-TennisShotTracker WatchKit App-acknowledgements.plist */,
+				669565FFC018F365C0260F7DFF28052A /* Pods-TennisShotTracker WatchKit App-dummy.m */,
+				E37B9A251BE4989F6CB7FD55E9492987 /* Pods-TennisShotTracker WatchKit App-Info.plist */,
+				F5C54D74A15BD6490F834A82352AFAEF /* Pods-TennisShotTracker WatchKit App-umbrella.h */,
+				BF3D8F63DA923AD3D38B4E590B09F1CA /* Pods-TennisShotTracker WatchKit App.debug.xcconfig */,
+				72198AC0EBA602AFFC07FAF04246ADDD /* Pods-TennisShotTracker WatchKit App.release.xcconfig */,
+			);
+			name = "Pods-TennisShotTracker WatchKit App";
+			path = "Target Support Files/Pods-TennisShotTracker WatchKit App";
+			sourceTree = "<group>";
+		};
+		ACEFC3AAD274AD90974D496DF07C98CD /* watchOS */ = {
+			isa = PBXGroup;
+			children = (
+				356D081351CFBD0475E5983D730E32DF /* Foundation.framework */,
+				DE257882FC043E265CF9C48330638AAC /* UIKit.framework */,
+			);
+			name = watchOS;
+			sourceTree = "<group>";
+		};
+		C112349992BC7E58F79D46BF1A109C6F /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				52C6272E191B63964C904D9856A3D76A /* Pods-TennisShotTracker */,
+				79E347CD7F89D20C14A2297517279C4C /* Pods-TennisShotTracker WatchKit App */,
+				19EA44E30A7B37E377D20D3FE224F2D3 /* Pods-TennisShotTracker WatchKit Extension */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		C1B2DCF064246E077D292DDD5A1181BD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				97C0432AB6D53F0110BCF205EC83141E /* Pods_TennisShotTracker.framework */,
+				BFDC7F32DF7486086EAC247F263E4201 /* Pods_TennisShotTracker_WatchKit_App.framework */,
+				EC714304B9B543D9B08C06A216065DFB /* Pods_TennisShotTracker_WatchKit_Extension.framework */,
+				79FA29BFF7933828736E9529AEA6269B /* YOChartImageKit.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				11D9AE111084918F3B1B8E840138598A /* Frameworks */,
+				71566947CD5C99A39A4A0263D344E4A5 /* Pods */,
+				C1B2DCF064246E077D292DDD5A1181BD /* Products */,
+				C112349992BC7E58F79D46BF1A109C6F /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		EDF389E7167D99CF14C405A2F8E6A128 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C5AAF6E13FFF4E370E8A35680F420C47 /* YOChartImageKit.modulemap */,
+				B8532CF71B8402C89A29CE997314CE97 /* YOChartImageKit.xcconfig */,
+				AF4215ACA42CEA41248B969D2A8CFDED /* YOChartImageKit-dummy.m */,
+				0FDB8ED3CD4398060CE4AE77FE9F8626 /* YOChartImageKit-Info.plist */,
+				883A1393729204142D2C40A41AF2D025 /* YOChartImageKit-prefix.pch */,
+				C955BDFA64E820F5D49237B9EB68702C /* YOChartImageKit-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/YOChartImageKit";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		3969F50712FDE9762737940E4FDE9552 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				894A176B3983771E1837B6577AC25ABF /* Pods-TennisShotTracker WatchKit Extension-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		955CDA58D72712FB8536C9DDBC3A2661 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				231BB3EC7DCF3BA44838B6F6609F3FE0 /* Pods-TennisShotTracker WatchKit App-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A34932E4DB686044C258970CD08D3AB8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				230E62D68D4F8ADF650597D0A7F7A738 /* YOBarChartImage.h in Headers */,
+				D8FCDAC0A446E44A61477EBB3C45F40C /* YOChartImageKit-umbrella.h in Headers */,
+				C41676B788951FDD79AC633E0EF718D6 /* YOChartImageKit.h in Headers */,
+				746E2649D89CDF92C1AB46D1C291D723 /* YODonutChartImage.h in Headers */,
+				FF9F7A02348F5D33087E72CACD5ACD83 /* YOLineChartImage.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3FD68BFDE5CD25D07DFFED4D5A46668 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41138EA80739AB527A89AD61DCA2615C /* Pods-TennisShotTracker-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		7124CA1709F89369848C20E79ED72EA7 /* YOChartImageKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B321EC4598DB3756BDBBE9411A675DD /* Build configuration list for PBXNativeTarget "YOChartImageKit" */;
+			buildPhases = (
+				A34932E4DB686044C258970CD08D3AB8 /* Headers */,
+				93DA5D088D6770BC84EE67CFEDEE93C2 /* Sources */,
+				3104D4A5AF886F987387FC822C31C80D /* Frameworks */,
+				69FDB8A071DAC77027CEF6BA282BEEC3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YOChartImageKit;
+			productName = YOChartImageKit;
+			productReference = 79FA29BFF7933828736E9529AEA6269B /* YOChartImageKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		88A17B3473641B8ADAB66FA0FD7347CA /* Pods-TennisShotTracker WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37E95A5BF48A8932A977AEB663CBF6AF /* Build configuration list for PBXNativeTarget "Pods-TennisShotTracker WatchKit App" */;
+			buildPhases = (
+				955CDA58D72712FB8536C9DDBC3A2661 /* Headers */,
+				5F9B4D4FF53FCD5CF66EEA61DEFC4981 /* Sources */,
+				22765EC0C4C9DC3DB3C717EA5CF1A26A /* Frameworks */,
+				63D253456D9B2AA8E698A3CE7419158F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-TennisShotTracker WatchKit App";
+			productName = "Pods-TennisShotTracker WatchKit App";
+			productReference = BFDC7F32DF7486086EAC247F263E4201 /* Pods_TennisShotTracker_WatchKit_App.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		AADED22A6CD9A12301A759F6AF232A78 /* Pods-TennisShotTracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFBF1F8CF6A980E008A0ADA8CC0637C6 /* Build configuration list for PBXNativeTarget "Pods-TennisShotTracker" */;
+			buildPhases = (
+				B3FD68BFDE5CD25D07DFFED4D5A46668 /* Headers */,
+				589407553A8D3C2C1BA4C0C7BB92DC86 /* Sources */,
+				7703A59744D43B38E8B75F17FBAEEBB6 /* Frameworks */,
+				76769ACDAB9674CA743DD18D86E1BF8F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-TennisShotTracker";
+			productName = "Pods-TennisShotTracker";
+			productReference = 97C0432AB6D53F0110BCF205EC83141E /* Pods_TennisShotTracker.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B1F71060DEB4233F65118B77BBEEC478 /* Pods-TennisShotTracker WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0AF06CAA19D3346905754B6C98A1817C /* Build configuration list for PBXNativeTarget "Pods-TennisShotTracker WatchKit Extension" */;
+			buildPhases = (
+				3969F50712FDE9762737940E4FDE9552 /* Headers */,
+				337105096DCC8151A933C028D9A9203B /* Sources */,
+				EFDD9811808AEE58D1EBC26C96B2D56C /* Frameworks */,
+				7C45571C6CCC83AA9886BB9A6F769C80 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5D5A2ACFFB92FB12B9BEBDD21FB4CA2B /* PBXTargetDependency */,
+			);
+			name = "Pods-TennisShotTracker WatchKit Extension";
+			productName = "Pods-TennisShotTracker WatchKit Extension";
+			productReference = EC714304B9B543D9B08C06A216065DFB /* Pods_TennisShotTracker_WatchKit_Extension.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = C1B2DCF064246E077D292DDD5A1181BD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AADED22A6CD9A12301A759F6AF232A78 /* Pods-TennisShotTracker */,
+				88A17B3473641B8ADAB66FA0FD7347CA /* Pods-TennisShotTracker WatchKit App */,
+				B1F71060DEB4233F65118B77BBEEC478 /* Pods-TennisShotTracker WatchKit Extension */,
+				7124CA1709F89369848C20E79ED72EA7 /* YOChartImageKit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		63D253456D9B2AA8E698A3CE7419158F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69FDB8A071DAC77027CEF6BA282BEEC3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76769ACDAB9674CA743DD18D86E1BF8F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C45571C6CCC83AA9886BB9A6F769C80 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		337105096DCC8151A933C028D9A9203B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				452B4E3E459896A7AD6DAD9D66434E6B /* Pods-TennisShotTracker WatchKit Extension-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		589407553A8D3C2C1BA4C0C7BB92DC86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A12FA0C6B352963A87AA599CF91E744 /* Pods-TennisShotTracker-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F9B4D4FF53FCD5CF66EEA61DEFC4981 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EA7368A23DBAB817BBECE811200CB01 /* Pods-TennisShotTracker WatchKit App-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93DA5D088D6770BC84EE67CFEDEE93C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				561CA53FB4CA8F5CC8D9F74C7B2659B4 /* YOBarChartImage.m in Sources */,
+				1C208B851226CE037D9BBA1AB5747172 /* YOChartImageKit-dummy.m in Sources */,
+				9A00A13371014A448B1474F368A730EC /* YODonutChartImage.m in Sources */,
+				2F98C9DA6018E432D210F35F2B0BB7F3 /* YOLineChartImage.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5D5A2ACFFB92FB12B9BEBDD21FB4CA2B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = YOChartImageKit;
+			target = 7124CA1709F89369848C20E79ED72EA7 /* YOChartImageKit */;
+			targetProxy = 4C0AB735E85BD8422D482D2CFE85FBEE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3C636D707C6326D103BA7EA4FDFEEF90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADE4B0810DBEE4D990DBA8D8A445CF40 /* Pods-TennisShotTracker.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TennisShotTracker/Pods-TennisShotTracker-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TennisShotTracker/Pods-TennisShotTracker.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		41E8892EAED584E4A40D884390E7358A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8532CF71B8402C89A29CE997314CE97 /* YOChartImageKit.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/YOChartImageKit/YOChartImageKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/YOChartImageKit/YOChartImageKit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/YOChartImageKit/YOChartImageKit.modulemap";
+				PRODUCT_MODULE_NAME = YOChartImageKit;
+				PRODUCT_NAME = YOChartImageKit;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		6D198CB8F0838DE366507D57A5FE2732 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72198AC0EBA602AFFC07FAF04246ADDD /* Pods-TennisShotTracker WatchKit App.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TennisShotTracker WatchKit App/Pods-TennisShotTracker WatchKit App-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TennisShotTracker WatchKit App/Pods-TennisShotTracker WatchKit App.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Release;
+		};
+		93BF815673F8764E94C3A62AC0CE884E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = "";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+			};
+			name = Release;
+		};
+		A396E7456A68ABC83185C8861460AA0F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0163CCFF24EB3208E2339FAC7B4B9EC /* Pods-TennisShotTracker WatchKit Extension.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TennisShotTracker WatchKit Extension/Pods-TennisShotTracker WatchKit Extension-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TennisShotTracker WatchKit Extension/Pods-TennisShotTracker WatchKit Extension.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+			};
+			name = Debug;
+		};
+		AB72EBAE5C8584B0D44357EB745479F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF3D8F63DA923AD3D38B4E590B09F1CA /* Pods-TennisShotTracker WatchKit App.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TennisShotTracker WatchKit App/Pods-TennisShotTracker WatchKit App-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TennisShotTracker WatchKit App/Pods-TennisShotTracker WatchKit App.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Debug;
+		};
+		B708A344950A05FDB671E6F7452F99C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = "";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+			};
+			name = Debug;
+		};
+		D04040E3149D39FA0E0996466202FE4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42F6BDB71AF9F8CD286CE05B8B130BF2 /* Pods-TennisShotTracker.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TennisShotTracker/Pods-TennisShotTracker-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TennisShotTracker/Pods-TennisShotTracker.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D35638334E2048BBFC997832963E1B5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8532CF71B8402C89A29CE997314CE97 /* YOChartImageKit.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/YOChartImageKit/YOChartImageKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/YOChartImageKit/YOChartImageKit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/YOChartImageKit/YOChartImageKit.modulemap";
+				PRODUCT_MODULE_NAME = YOChartImageKit;
+				PRODUCT_NAME = YOChartImageKit;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		FF75AF6C03A5C193C25D6486557CAA56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0919EB60811620C36068FE939EB2CBDD /* Pods-TennisShotTracker WatchKit Extension.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TennisShotTracker WatchKit Extension/Pods-TennisShotTracker WatchKit Extension-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TennisShotTracker WatchKit Extension/Pods-TennisShotTracker WatchKit Extension.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0AF06CAA19D3346905754B6C98A1817C /* Build configuration list for PBXNativeTarget "Pods-TennisShotTracker WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A396E7456A68ABC83185C8861460AA0F /* Debug */,
+				FF75AF6C03A5C193C25D6486557CAA56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		37E95A5BF48A8932A977AEB663CBF6AF /* Build configuration list for PBXNativeTarget "Pods-TennisShotTracker WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB72EBAE5C8584B0D44357EB745479F6 /* Debug */,
+				6D198CB8F0838DE366507D57A5FE2732 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B708A344950A05FDB671E6F7452F99C6 /* Debug */,
+				93BF815673F8764E94C3A62AC0CE884E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B321EC4598DB3756BDBBE9411A675DD /* Build configuration list for PBXNativeTarget "YOChartImageKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D35638334E2048BBFC997832963E1B5C /* Debug */,
+				41E8892EAED584E4A40D884390E7358A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFBF1F8CF6A980E008A0ADA8CC0637C6 /* Build configuration list for PBXNativeTarget "Pods-TennisShotTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C636D707C6326D103BA7EA4FDFEEF90 /* Debug */,
+				D04040E3149D39FA0E0996466202FE4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

@@ -12,4 +12,5 @@ class ResultsRowController: NSObject {
 
     @IBOutlet weak var data: WKInterfaceLabel!
     @IBOutlet weak var interval: WKInterfaceLabel!
+    @IBOutlet weak var distance: WKInterfaceLabel!
 }

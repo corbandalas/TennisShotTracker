@@ -37,6 +37,9 @@ struct ModelConstants {
     static let racketLength = 0.68
     static let zeta1Angle = 175.0 * Double.pi / 180
     static let zeta2Angle = 135.0 * Double.pi / 180
+    static let yawThreshold = 1.3//1.95 // Radians
+    static let rateThreshold = 5.0 //5.5    // Radians/sec
+    static let resetThreshold = 5.5 * 0.05 // To avoid double counting on the return swing.
 }
 
 
@@ -54,9 +57,7 @@ class MotionManager: NSObject {
     // MARK: Application Specific Constants
     
     // These constants were derived from data and should be further tuned for your needs.
-    let yawThreshold = 1.95 // Radians
-    let rateThreshold = 5.5    // Radians/sec
-    let resetThreshold = 5.5 * 0.05 // To avoid double counting on the return swing.
+    
 
     
     let rateAlongGravityBuffer = RunningBuffer(size: ModelConstants.predictionWindowSize)
@@ -73,7 +74,12 @@ class MotionManager: NSObject {
     let gravityYBuffer = RunningBuffer(size: ModelConstants.predictionWindowSize)
     let gravityZBuffer = RunningBuffer(size: ModelConstants.predictionWindowSize)
     
-    let model = TennisShotActivityRightHandModel()
+    let pitchBuffer = RunningBuffer(size: ModelConstants.predictionWindowSize)
+    let rollBuffer = RunningBuffer(size: ModelConstants.predictionWindowSize)
+    let yawBuffer = RunningBuffer(size: ModelConstants.predictionWindowSize)
+    
+    
+    let model = TennisShotRightHandModelClassifier()
     
    
     let predictionWindowDataArray = try? MLMultiArray(shape: [NSNumber(value: ModelConstants.predictionWindowSize)], dataType: MLMultiArrayDataType.double)
@@ -139,6 +145,9 @@ class MotionManager: NSObject {
         
         let gravity = deviceMotion.gravity
         let rotationRate = deviceMotion.rotationRate
+        let attitude = deviceMotion.attitude
+    
+        
         
         let rateAlongGravity = rotationRate.x * gravity.x // r⃗ · ĝ
                                      + rotationRate.y * gravity.y
@@ -163,100 +172,132 @@ class MotionManager: NSObject {
                    gravityYBuffer.addSample(deviceMotion.gravity.y)
                    gravityZBuffer.addSample(deviceMotion.gravity.z)
             
-//            print(
-//                String(deviceMotion.timestamp),
-//                String(deviceMotion.userAcceleration.x),
-//                                 String(deviceMotion.userAcceleration.y),
-//                                 String(deviceMotion.userAcceleration.z),
-//                                 String(deviceMotion.rotationRate.x),
-//                                 String(deviceMotion.rotationRate.y),
-//                                 String(deviceMotion.rotationRate.z),
-//                                 String(deviceMotion.gravity.x),
-//                                 String(deviceMotion.gravity.y),
-//                                 String(deviceMotion.gravity.z),
+                   pitchBuffer.addSample(attitude.pitch)
+                   rollBuffer.addSample(attitude.roll)
+                   yawBuffer.addSample(attitude.yaw)
+            
+            print(
+                String(deviceMotion.timestamp),
+                String(deviceMotion.userAcceleration.x),
+                                 String(deviceMotion.userAcceleration.y),
+                                 String(deviceMotion.userAcceleration.z),
+                                 String(deviceMotion.rotationRate.x),
+                                 String(deviceMotion.rotationRate.y),
+                                 String(deviceMotion.rotationRate.z),
+                                 String(deviceMotion.gravity.x),
+                                 String(deviceMotion.gravity.y),
+                                 String(deviceMotion.gravity.z),
+                                 String(attitude.pitch),
+                                 String(attitude.roll),
+                                 String(attitude.yaw),
 
-//                          separator: ",")
+                          separator: ",")
             
             
             return
         } else {
-//            print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+            print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+            
+           
+            
             
             if (!shotDetected) {
-                let modelPrediction = performModelPrediction()
                 
-//                print("Predicted class: \(modelPrediction!)")
-                  
+               
                 
-                shotDetected = true
-                
-                
-                
-                if (modelPrediction != "none") {
-                    
-                    var count = 0
-                    
-                    if (modelPrediction == "forehand_spin") {
-                        forehandSpinCount += 1
-                        count = forehandSpinCount
-                        
-                    } else if (modelPrediction == "forehand_slice") {
-                        forehandSliceCount += 1
-                        count = forehandSliceCount
-                    } else if (modelPrediction == "forehand_volley") {
-                        forehandVolleyCount += 1
-                        count = forehandVolleyCount
-                    } else if (modelPrediction == "backhand_spin") {
-                        backhandSpinCount += 1
-                        count = backhandSpinCount
-                    } else if (modelPrediction == "backhand_slice") {
-                        backhandSliceCount += 1
-                        count = backhandSliceCount
-                    } else if (modelPrediction == "backhand_volley") {
-                        backhandVolleyCount += 1
-                        count = backhandVolleyCount
-                    } else if (modelPrediction == "serve") {
-                        serveCount += 1
-                        count = serveCount
-                    } else if (modelPrediction == "single_handed_backhand") {
-                        single_handed_backhandCount += 1
-                        count = single_handed_backhandCount
-                    }
-                    
-                    recentDetection = true
+                let accumulatedYawRot = rateAlongGravityBuffer.sum() * ModelConstants.sensorsUpdateInterval
+                           let peakRate = accumulatedYawRot > 0 ?
+                               rateAlongGravityBuffer.max() : rateAlongGravityBuffer.min()
+                           
+//                           print("accumulatedYawRot = \(accumulatedYawRot)")
+//                           print("peakRate = \(peakRate)")
+                           
+                if (/*abs(accumulatedYawRot) > ModelConstants.yawThreshold &&*/ abs(peakRate) > ModelConstants.rateThreshold) {
+                                         let modelPrediction = performModelPrediction()
+                                            
+                            //                print("Predicted class: \(modelPrediction!)")
+                                              
+                                            
+                                           
+                                            
+                                            
+                                            
+                                            if (modelPrediction != "none") {
+                                                
+                                                var count = 0
+                                                
+                                                if (modelPrediction == "forehand_spin") {
+                                                    forehandSpinCount += 1
+                                                    count = forehandSpinCount
+                                                    
+                                                } else if (modelPrediction == "forehand_slice") {
+                                                    forehandSliceCount += 1
+                                                    count = forehandSliceCount
+                                                } else if (modelPrediction == "forehand_volley") {
+                                                    forehandVolleyCount += 1
+                                                    count = forehandVolleyCount
+                                                } else if (modelPrediction == "backhand_spin") {
+                                                    backhandSpinCount += 1
+                                                    count = backhandSpinCount
+                                                } else if (modelPrediction == "backhand_slice") {
+                                                    backhandSliceCount += 1
+                                                    count = backhandSliceCount
+                                                } else if (modelPrediction == "backhand_volley") {
+                                                    backhandVolleyCount += 1
+                                                    count = backhandVolleyCount
+                                                } else if (modelPrediction == "serve") {
+                                                    serveCount += 1
+                                                    count = serveCount
+                                                } else if (modelPrediction == "single_handed_backhand") {
+                                                    single_handed_backhandCount += 1
+                                                    count = single_handed_backhandCount
+                                                }
+                                                
+                                                recentDetection = true
 
-                    var speed = 0.0
-                    
-                    let rotationRateY = rotationYBuffer.maxWithoutSign().max * 57.3
-                    
-                    if (modelPrediction == "serve") {
-                        speed = (0.025 * abs(rotationRateY) + 20.06) * 3.6;
-                    } else {
-                        speed = (0.039 * abs(rotationRateY) + 3.94) * 3.6;
-                    }
-                    
-                    print("Calculated speed = \(speed)")
-                    
-                    
-//                    calculateShotSpeed(impactGravityY: rotationYBuffer.maxWithoutSign().max * 57.3 , impactGravityZ: rotationZBuffer.buffer[(rotationYBuffer.maxWithoutSign().position)] * 57.3, armLength: ModelConstants.armLength, tetaAngle1: ModelConstants.zeta1Angle, tetaAngle2: ModelConstants.zeta2Angle, racketLength: ModelConstants.racketLength)
-                    
-                    delegate?.didUpdateShotCount(self, shotType: modelPrediction!, count: count, speed: speed)
+                                                var speed = 0.0
+                                                
+                                                let rotationRateY = rotationYBuffer.maxWithoutSign().max * 57.3
+                                                
+                                                if (modelPrediction == "serve") {
+                                                    speed = (0.025 * abs(rotationRateY) + 20.06) * 3.6;
+                                                } else {
+                                                    speed = (0.039 * abs(rotationRateY) + 3.94) * 3.6;
+                                                }
+                                                
+//                                                print("Calculated speed = \(speed)")
+                                                
+                                                
+                            //                    calculateShotSpeed(impactGravityY: rotationYBuffer.maxWithoutSign().max * 57.3 , impactGravityZ: rotationZBuffer.buffer[(rotationYBuffer.maxWithoutSign().position)] * 57.3, armLength: ModelConstants.armLength, tetaAngle1: ModelConstants.zeta1Angle, tetaAngle2: ModelConstants.zeta2Angle, racketLength: ModelConstants.racketLength)
+                                                
+                                                delegate?.didUpdateShotCount(self, shotType: modelPrediction!, count: count, speed: speed)
 
+                                            }
+                            
                 }
+                 shotDetected = true
+                                            
+                                            rotationXBuffer.reset()
+                                            rotationYBuffer.reset()
+                                            rotationZBuffer.reset()
+                                                           
+                                            accelerationXBuffer.reset()
+                                            accelerationYBuffer.reset()
+                                            accelerationZBuffer.reset()
+                                            
+                                            gravityXBuffer.reset()
+                                            gravityYBuffer.reset()
+                                            gravityZBuffer.reset()
                 
-                rotationXBuffer.reset()
-                rotationYBuffer.reset()
-                rotationZBuffer.reset()
-                               
-                accelerationXBuffer.reset()
-                accelerationYBuffer.reset()
-                accelerationZBuffer.reset()
+                                            pitchBuffer.reset()
+                                            rollBuffer.reset()
+                                            yawBuffer.reset()
+                                            
+                                            rateAlongGravityBuffer.reset()
+                           
                 
-                gravityXBuffer.reset()
-                gravityYBuffer.reset()
-                gravityZBuffer.reset()
                 
-                rateAlongGravityBuffer.reset()
+   
                 
             }
             
@@ -264,9 +305,7 @@ class MotionManager: NSObject {
         }
         
        
-//        let accumulatedYawRot = rateAlongGravityBuffer.sum() * ModelConstants.sensorsUpdateInterval
-//        let peakRate = accumulatedYawRot > 0 ?
-//            rateAlongGravityBuffer.max() : rateAlongGravityBuffer.min()
+
 //
 //        if (accumulatedYawRot < -yawThreshold && peakRate < -rateThreshold) {
 //            // Counter clockwise swing.
@@ -325,6 +364,10 @@ class MotionManager: NSObject {
         gravityXBuffer.reset()
         gravityYBuffer.reset()
         gravityZBuffer.reset()
+        
+        pitchBuffer.reset()
+        rollBuffer.reset()
+        yawBuffer.reset()
     
         forehandSpinCount = 0
         forehandSliceCount = 0
@@ -359,8 +402,12 @@ class MotionManager: NSObject {
     
     func performModelPrediction () -> String? {
         
+        
 
-        guard let prediction = try? model.prediction(acc_x: convertToMLArray(accelerationXBuffer.buffer), acc_y: convertToMLArray(accelerationYBuffer.buffer), acc_z: convertToMLArray(accelerationZBuffer.buffer),giro_x: convertToMLArray(gravityXBuffer.buffer), giro_y: convertToMLArray(gravityYBuffer.buffer), giro_z: convertToMLArray(gravityZBuffer.buffer), rot_x: convertToMLArray(rotationXBuffer.buffer), rot_y: convertToMLArray(rotationYBuffer.buffer), rot_z: convertToMLArray(rotationZBuffer.buffer), stateIn: nil)
+        guard let prediction = try? model.prediction(acc_x: convertToMLArray(accelerationXBuffer.buffer), acc_y: convertToMLArray(accelerationYBuffer.buffer), acc_z: convertToMLArray(accelerationZBuffer.buffer),giro_x: convertToMLArray(gravityXBuffer.buffer), giro_y: convertToMLArray(gravityYBuffer.buffer), giro_z:
+            convertToMLArray(gravityZBuffer.buffer), pitch:
+            convertToMLArray(pitchBuffer.buffer), roll:
+            convertToMLArray(rollBuffer.buffer), rot_x: convertToMLArray(rotationXBuffer.buffer), rot_y: convertToMLArray(rotationYBuffer.buffer), rot_z: convertToMLArray(rotationZBuffer.buffer), yaw: convertToMLArray(yawBuffer.buffer), stateIn: nil)
         else {
                 return "N/A"
         }
@@ -369,7 +416,7 @@ class MotionManager: NSObject {
     
         let predictPercent = prediction.labelProbability[prediction.label]
         
-        print("Predicted class:  \(prediction.label) \(predictPercent!)" )
+//        print("Predicted class:  \(prediction.label) \(predictPercent!)" )
         
         if (Double(0.8).isLess(than: predictPercent!)) {
             return prediction.label
@@ -384,28 +431,28 @@ class MotionManager: NSObject {
     
     func calculateShotSpeed(impactGravityY: Double, impactGravityZ: Double, armLength: Double, tetaAngle1: Double, tetaAngle2: Double, racketLength: Double) {
         
-        print("Shot impactGravityY =  \(impactGravityY)")
+//        print("Shot impactGravityY =  \(impactGravityY)")
         
-        print("Shot impactGravityZ =  \(impactGravityZ)")
+//        print("Shot impactGravityZ =  \(impactGravityZ)")
         
         let w = sqrt(pow(impactGravityY, 2.0) + pow(impactGravityZ, 2.0))
         
-        print("Shot w =  \(w)")
+//        print("Shot w =  \(w)")
         
         let effectiveArmLength = armLength / (2 * sqrt(2 *  (1 - cos(tetaAngle1))))
         
-        print("Shot effectiveArmLength =  \(effectiveArmLength)")
+//        print("Shot effectiveArmLength =  \(effectiveArmLength)")
         
         let alphaAngle = acos(effectiveArmLength/armLength)
         
-        print("Shot alphaAngle =  \(alphaAngle)")
+//        print("Shot alphaAngle =  \(alphaAngle)")
         
         let effectiveRotationRadius = sqrt(pow(racketLength, 2.0) + pow(effectiveArmLength, 2.0) - 2 * racketLength * effectiveArmLength * cos(tetaAngle2 - Double(alphaAngle)))
         
-        print("Shot effectiveRotationRadius =  \(effectiveRotationRadius)")
+//        print("Shot effectiveRotationRadius =  \(effectiveRotationRadius)")
         
         let speed = w * effectiveRotationRadius
         
-        print("Shot speed =  \(speed * 3.6)")
+//        print("Shot speed =  \(speed * 3.6)")
     }
 }

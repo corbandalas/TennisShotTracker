@@ -6,10 +6,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14643"/>
     </dependencies>
     <scenes>
-        <!--Tennis shot tracker-->
+        <!--Tennis tracker-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller identifier="interfaceController" title="Tennis shot tracker" spacing="13" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="TennisShotTracker_WatchKit_App" customModuleProvider="target">
+                <controller identifier="interfaceController" title="Tennis tracker" spacing="13" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="TennisShotTracker_WatchKit_App" customModuleProvider="target">
                     <items>
                         <group height="138" alignment="left" spacing="4" id="tl1-3M-Lue">
                             <items>
@@ -213,6 +213,7 @@
                                                             </variation>
                                                         </label>
                                                         <label alignment="left" text="0" id="YUT-Ku-xlC">
+                                                            <color key="textColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <fontDescription key="font" type="system" pointSize="10"/>
                                                             <variation key="device=watch38mm">
                                                                 <fontDescription key="font" type="system" pointSize="7"/>
@@ -229,6 +230,7 @@
                                                             </variation>
                                                         </label>
                                                         <label alignment="left" text="0" id="9XP-sg-g4Z">
+                                                            <color key="textColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <fontDescription key="font" type="system" pointSize="10"/>
                                                             <variation key="device=watch38mm">
                                                                 <fontDescription key="font" type="system" pointSize="7"/>
@@ -238,7 +240,7 @@
                                                 </group>
                                             </items>
                                         </group>
-                                        <group width="1" alignment="left" verticalAlignment="bottom" layout="vertical" spacing="0.0" id="Wpa-7E-wrT">
+                                        <group width="1" height="48" alignment="left" verticalAlignment="bottom" layout="vertical" spacing="0.0" id="Wpa-7E-wrT">
                                             <items>
                                                 <label alignment="left" text="Backhand" id="LAa-7I-hqt">
                                                     <color key="textColor" red="0.27271941290000001" green="0.48070965110000002" blue="0.77151473449999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -256,6 +258,7 @@
                                                             </variation>
                                                         </label>
                                                         <label alignment="left" text="0" id="69K-bY-dZh">
+                                                            <color key="textColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <fontDescription key="font" type="system" pointSize="10"/>
                                                             <variation key="device=watch38mm">
                                                                 <fontDescription key="font" type="system" pointSize="7"/>
@@ -272,6 +275,7 @@
                                                             </variation>
                                                         </label>
                                                         <label alignment="left" text="0" id="jKd-kG-wLy">
+                                                            <color key="textColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <fontDescription key="font" type="system" pointSize="10"/>
                                                             <variation key="device=watch38mm">
                                                                 <fontDescription key="font" type="system" pointSize="7"/>
@@ -288,6 +292,7 @@
                                                             </variation>
                                                         </label>
                                                         <label alignment="left" text="0" id="NJf-JZ-mY3">
+                                                            <color key="textColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <fontDescription key="font" type="system" pointSize="10"/>
                                                             <variation key="device=watch38mm">
                                                                 <fontDescription key="font" type="system" pointSize="7"/>
@@ -302,13 +307,14 @@
                                                 <group width="1" height="12" alignment="left" id="PCQ-rr-XAs">
                                                     <items>
                                                         <label height="12" alignment="left" text="Serve" numberOfLines="2" id="cdl-eO-lKx">
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="textColor" red="0.27271941290000001" green="0.48070965110000002" blue="0.77151473449999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <fontDescription key="font" type="boldSystem" pointSize="10"/>
                                                             <variation key="device=watch38mm">
                                                                 <fontDescription key="font" type="system" pointSize="7"/>
                                                             </variation>
                                                         </label>
                                                         <label alignment="left" text="0" id="jqv-jU-htZ">
+                                                            <color key="textColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <fontDescription key="font" type="system" pointSize="10"/>
                                                             <variation key="device=watch38mm">
                                                                 <fontDescription key="font" type="system" pointSize="7"/>

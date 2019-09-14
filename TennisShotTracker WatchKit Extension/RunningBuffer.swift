@@ -69,6 +69,7 @@ class RunningBuffer {
             }
         }
         
+//        print("Max = \(max) and pos = \(pos)")
        
         return (max, pos)
     }

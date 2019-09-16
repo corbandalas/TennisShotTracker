@@ -356,6 +356,7 @@ class InterfaceController: WKInterfaceController,  HKWorkoutSessionDelegate, HKL
                 let value = statistics.sumQuantity()?.doubleValue(for: energyUnit)
                 let roundedValue = Double( round( 1 * value! ) / 1 )
                 label.setText("\(roundedValue)")
+                
                 burnedCalories = roundedValue
                 return
             case HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning):
@@ -430,14 +431,26 @@ class InterfaceController: WKInterfaceController,  HKWorkoutSessionDelegate, HKL
     func updateLabels() {
            if active {
             
-          
-            
+//                forehandSpinCount = 10
+//            forehandSliceCount = 2
+//            backhandSpinCount = 5
+//            backhandSliceCount = 1
+//            single_handed_backhandCount = 3
+//            serveCount = 4
+//            currentShotSpeed = 42.0
+//            
+//            activeCaloriesLabel.setText("43")
+//            distanceLabel.setText("327")
+//            heartRateLabel.setText("78.0")
+//            
+               
+//                forehandVolleyCountLabel.setText("\(forehandVolleyCount)")
+
+//                backhandVolleyCountLabel.setText("\(backhandVolleyCount)")
                 forehandSpinCountLabel.setText("\(forehandSpinCount)")
                 forehandSliceCountLabel.setText("\(forehandSliceCount)")
-//                forehandVolleyCountLabel.setText("\(forehandVolleyCount)")
                 backhandSpinCountLabel.setText("\(backhandSpinCount)")
                 backhandSliceCountLabel.setText("\(backhandSliceCount)")
-//                backhandVolleyCountLabel.setText("\(backhandVolleyCount)")
                 backhandSingleHandedCountLabel.setText("\(single_handed_backhandCount)")
                 serveCountLabel.setText("\(serveCount)")
                 speedLabel.setText("\(roundf(Float(currentShotSpeed * 100) / 100))")
@@ -488,6 +501,15 @@ class InterfaceController: WKInterfaceController,  HKWorkoutSessionDelegate, HKL
         var shotSpeedMin = 0.0
         var shotSpeedAverage = 0.0
         var serveSpeedAverage = 0.0
+        
+//        serveSpeedArray.append(60.2)
+//        serveSpeedArray.append(90.5)
+//
+//        shotSpeedArray.append(45)
+//        shotSpeedArray.append(70)
+//        shotSpeedArray.append(92)
+//
+//        workoutDistance = 327.0
         
         if !serveSpeedArray.isEmpty {
             serveSpeedMax = serveSpeedArray.max()!

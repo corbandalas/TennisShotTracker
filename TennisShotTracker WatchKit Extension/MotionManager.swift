@@ -176,27 +176,27 @@ class MotionManager: NSObject {
                    rollBuffer.addSample(attitude.roll)
                    yawBuffer.addSample(attitude.yaw)
             
-            print(
-                String(deviceMotion.timestamp),
-                String(deviceMotion.userAcceleration.x),
-                                 String(deviceMotion.userAcceleration.y),
-                                 String(deviceMotion.userAcceleration.z),
-                                 String(deviceMotion.rotationRate.x),
-                                 String(deviceMotion.rotationRate.y),
-                                 String(deviceMotion.rotationRate.z),
-                                 String(deviceMotion.gravity.x),
-                                 String(deviceMotion.gravity.y),
-                                 String(deviceMotion.gravity.z),
-                                 String(attitude.pitch),
-                                 String(attitude.roll),
-                                 String(attitude.yaw),
-
-                          separator: ",")
+//            print(
+//                String(deviceMotion.timestamp),
+//                String(deviceMotion.userAcceleration.x),
+//                                 String(deviceMotion.userAcceleration.y),
+//                                 String(deviceMotion.userAcceleration.z),
+//                                 String(deviceMotion.rotationRate.x),
+//                                 String(deviceMotion.rotationRate.y),
+//                                 String(deviceMotion.rotationRate.z),
+//                                 String(deviceMotion.gravity.x),
+//                                 String(deviceMotion.gravity.y),
+//                                 String(deviceMotion.gravity.z),
+//                                 String(attitude.pitch),
+//                                 String(attitude.roll),
+//                                 String(attitude.yaw),
+//
+//                          separator: ",")
             
             
             return
         } else {
-            print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+//            print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
             
            
             
@@ -416,9 +416,9 @@ class MotionManager: NSObject {
     
         let predictPercent = prediction.labelProbability[prediction.label]
         
-//        print("Predicted class:  \(prediction.label) \(predictPercent!)" )
+        print("Predicted class:  \(prediction.label) \(predictPercent!)" )
         
-        if (Double(0.8).isLess(than: predictPercent!)) {
+        if (Double(0.75).isLess(than: predictPercent!)) {
             return prediction.label
         } else {
             return "none"

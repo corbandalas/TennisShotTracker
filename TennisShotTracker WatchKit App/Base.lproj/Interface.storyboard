@@ -187,6 +187,7 @@
                                         </group>
                                     </items>
                                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
+                                    <variation key="device=watch38mm" width="77"/>
                                     <variation key="device=watch42mm" width="81"/>
                                 </group>
                                 <separator alignment="left" alpha="0.80000000000000004" id="JTJ-Ky-unv">
@@ -334,22 +335,22 @@
                         </group>
                         <group width="159" height="40" alignment="center" spacing="7" id="JaC-cD-2Q9">
                             <items>
-                                <button width="74" height="37" alignment="center" title="Start" id="GPf-pD-asD">
+                                <button width="74" height="34" alignment="center" title="Start" id="GPf-pD-asD">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="backgroundColor" red="0.27271941290000001" green="0.48070965110000002" blue="0.77151473449999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <fontDescription key="font" type="boldSystem" pointSize="15"/>
-                                    <variation key="device=watch38mm" width="60">
+                                    <variation key="device=watch38mm" height="25" width="56">
                                         <fontDescription key="font" type="boldSystem" pointSize="10"/>
                                     </variation>
                                     <connections>
                                         <action selector="startButtonTapped" destination="AgC-eL-Hgc" id="9gi-Am-RlT"/>
                                     </connections>
                                 </button>
-                                <button width="74" height="37" alignment="center" title="Stop" id="DBj-hb-l1G">
+                                <button width="74" height="34" alignment="center" title="Stop" id="DBj-hb-l1G">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="backgroundColor" red="0.87149854274611394" green="0.3051566993651324" blue="0.3539858933946039" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <fontDescription key="font" type="boldSystem" pointSize="15"/>
-                                    <variation key="device=watch38mm" width="60">
+                                    <variation key="device=watch38mm" height="25" width="56">
                                         <fontDescription key="font" type="boldSystem" pointSize="10"/>
                                     </variation>
                                     <connections>

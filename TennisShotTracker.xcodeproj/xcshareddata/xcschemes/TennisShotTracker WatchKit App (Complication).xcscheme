@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9ECCBAAA230878BB0061805A"
-               BuildableName = "TennisShotTracker WatchKit App.app"
+               BuildableName = "Tennis shot tracker watchkitapp.app"
                BlueprintName = "TennisShotTracker WatchKit App"
                ReferencedContainer = "container:TennisShotTracker.xcodeproj">
             </BuildableReference>
@@ -29,7 +29,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9ECCBAA6230878BB0061805A"
-               BuildableName = "TennisShotTracker.app"
+               BuildableName = "Tennis shot tracker.app"
                BlueprintName = "TennisShotTracker"
                ReferencedContainer = "container:TennisShotTracker.xcodeproj">
             </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9ECCBAAA230878BB0061805A"
-            BuildableName = "TennisShotTracker WatchKit App.app"
+            BuildableName = "Tennis shot tracker watchkitapp.app"
             BlueprintName = "TennisShotTracker WatchKit App"
             ReferencedContainer = "container:TennisShotTracker.xcodeproj">
          </BuildableReference>
@@ -82,7 +82,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9ECCBAAA230878BB0061805A"
-            BuildableName = "TennisShotTracker WatchKit App.app"
+            BuildableName = "Tennis shot tracker watchkitapp.app"
             BlueprintName = "TennisShotTracker WatchKit App"
             ReferencedContainer = "container:TennisShotTracker.xcodeproj">
          </BuildableReference>
@@ -91,7 +91,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9ECCBAAA230878BB0061805A"
-            BuildableName = "TennisShotTracker WatchKit App.app"
+            BuildableName = "Tennis shot tracker watchkitapp.app"
             BlueprintName = "TennisShotTracker WatchKit App"
             ReferencedContainer = "container:TennisShotTracker.xcodeproj">
          </BuildableReference>
